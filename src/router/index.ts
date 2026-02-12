@@ -8,6 +8,31 @@ const routes: RouteRecordRaw[] = [
     name: 'home',
     component: HomeView
   },
+    {
+      path: '/solawi',
+      name: 'solawi',
+      component: SoLaWiView
+    },
+      {
+      path: '/jungpflanzen',
+      name: 'jungpflanzen',
+      component: JungpflanzenView
+    },
+      {
+      path: '/exkursionen',
+      name: 'exkursionen',
+      component: ExkursionenView
+    },
+      {
+      path: '/wiesenheu',
+      name: 'wiesenheu',
+      component: WiesenheuView
+    },
+       {
+      path: '/contact',
+      name: 'contact',
+      component: ContactView
+    },
   {
     path: '/about',
     name: 'about',
