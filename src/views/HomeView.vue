@@ -8,6 +8,7 @@ import { RouterLink } from 'vue-router'
       <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold text-gray-900">
           Welcome to Ernteschwung V3
+          <h2 class="text-blue-300 dark:text-blue-900"> Test Darkmode</h2>
         </h1>
       </div>
     </header>
