@@ -1,0 +1,2 @@
+- verwende TypeScript für alle Frontend Dateien
+-schreibe wiederverewendbaren Code in Form von Funktionen und Komponenten

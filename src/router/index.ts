@@ -1,6 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import SoLaWiView from '@/views/SoLaWiView.vue'
+import JungpflanzenView from '@/views/JungpflanzenView.vue'
+import ExkursionenView from '@/views/ExkursionenView.vue'
+import WiesenheuView from '@/views/WiesenheuView.vue'
+import ContactView from '@/views/ContactView.vue'
 
 const routes: RouteRecordRaw[] = [
   {
