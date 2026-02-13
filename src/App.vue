@@ -40,8 +40,10 @@ import Footer from '@/components/Footer.vue'
   <div id="app" class="flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors">
     <Navbar />
     
-    <main class="flex-1">
-      <RouterView />
+    <main class="flex-1 w-full">
+      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <RouterView />
+      </div>
     </main>
     
     <Footer />

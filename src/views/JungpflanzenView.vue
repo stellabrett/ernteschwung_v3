@@ -3,29 +3,12 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <div class="page-view">
-    <header class="bg-white shadow">
-      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-primary">Jungpflanzen</h1>
-      </div>
-    </header>
-
-    <main>
-      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <div class="px-4 py-6 sm:px-0">
-          <div class="rounded-lg border border-third/30 bg-white p-8">
-            <p class="mb-6 text-gray-600">
-              Infos zu Anzucht, Sortiment und Verfugbarkeit werden hier erscheinen.
-            </p>
-            <RouterLink
-              to="/"
-              class="font-medium text-accent hover:text-accent/80"
-            >
-              ← Zur Startseite
-            </RouterLink>
-          </div>
-        </div>
-      </div>
-    </main>
+  <div>
+    <h1 class="mb-4 text-4xl font-bold text-primary dark:text-white">Jungpflanzen</h1>
+    <div class="rounded-lg border border-tertiary/30 bg-white p-8 dark:border-gray-700 dark:bg-gray-800">
+      <p class="mb-6 text-gray-600 dark:text-gray-300">
+        Infos zu Anzucht, Sortiment und Verfügbarkeit werden hier erscheinen.
+      </p>
+    </div>
   </div>
 </template>
