@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
+import DarkMode from '@/components/DarkMode.vue';
+
 
 const isOpen = ref(false)
 const isDark = ref(false)
@@ -15,15 +17,36 @@ const navLinks = [
 ]
 
 onMounted(() => {
+  const darkModeSetting = localStorage.getItem('darkMode')
   const html = document.documentElement
-  isDark.value = html.classList.contains('dark')
   
-  // Beobachte Änderungen am HTML Element
-  const observer = new MutationObserver(() => {
-    isDark.value = html.classList.contains('dark')
+  if (darkModeSetting !== null) {
+    if (darkModeSetting === 'true') {
+      html.classList.add('dark')
+      isDark.value = true
+    } else {
+      html.classList.remove('dark')
+      isDark.value = false
+    }
+  } else {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      html.classList.add('dark')
+      isDark.value = true
+    }
+  }
+  
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  mediaQuery.addEventListener('change', (e) => {
+    if (localStorage.getItem('darkMode') === null) {
+      if (e.matches) {
+        html.classList.add('dark')
+        isDark.value = true
+      } else {
+        html.classList.remove('dark')
+        isDark.value = false
+      }
+    }
   })
-  
-  observer.observe(html, { attributes: true, attributeFilter: ['class'] })
 })
 
 const toggleMenu = () => {
@@ -42,7 +65,6 @@ const toggleDarkMode = () => {
   } else {
     html.classList.remove('dark')
   }
-  // Save manual preference to localStorage
   localStorage.setItem('darkMode', String(isDark.value))
 }
 </script>
@@ -53,10 +75,10 @@ const toggleDarkMode = () => {
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center space-x-2 flex-shrink-0">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-first to-accent flex items-center justify-center">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
             <span class="text-white font-bold text-lg">E</span>
           </div>
-          <span class="hidden sm:inline text-xl font-bold text-first dark:text-white">Ernteschwung</span>
+          <span class="hidden sm:inline text-xl font-bold text-primary dark:text-white">Ernteschwung</span>
         </RouterLink>
 
         <!-- Desktop Navigation -->
@@ -65,15 +87,16 @@ const toggleDarkMode = () => {
             v-for="link in navLinks"
             :key="link.to"
             :to="link.to"
-            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-first dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-accent transition-colors"
-            active-class="bg-first/10 text-first dark:bg-accent/10 dark:text-accent"
+            class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-accent transition-colors"
+            active-class="bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"
           >
             {{ link.name }}
           </RouterLink>
         </div>
-
+   
         <!-- Right Side: Dark Mode Toggle + Mobile Menu Button -->
         <div class="flex items-center space-x-2">
+              <DarkMode />
           <!-- Dark Mode Toggle -->
           <button
             @click="toggleDarkMode"
@@ -113,8 +136,8 @@ const toggleDarkMode = () => {
           v-for="link in navLinks"
           :key="link.to"
           :to="link.to"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-first dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-accent transition-colors"
-          active-class="bg-first/10 text-first dark:bg-accent/10 dark:text-accent"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-accent transition-colors"
+          active-class="bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"
           @click="closeMenu"
         >
           {{ link.name }}

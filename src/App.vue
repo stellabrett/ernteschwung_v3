@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { onMounted } from 'vue'
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
 
-onMounted(() => {
+/* onMounted(() => {
   // Initialize dark mode: manual preference > system preference
   const darkModeSetting = localStorage.getItem('darkMode')
   const html = document.documentElement
@@ -34,7 +33,7 @@ onMounted(() => {
       }
     }
   })
-})
+}) */
 </script>
 
 <template>

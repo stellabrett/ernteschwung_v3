@@ -9,10 +9,10 @@ import { RouterLink } from 'vue-router'
         <!-- Brand Section -->
         <div>
           <div class="flex items-center space-x-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-first to-accent flex items-center justify-center">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
               <span class="text-white font-bold text-lg">E</span>
             </div>
-            <span class="text-lg font-bold text-first dark:text-white">Ernteschwung</span>
+            <span class="text-lg font-bold text-primary dark:text-white">Ernteschwung</span>
           </div>
           <p class="text-sm text-gray-600 dark:text-gray-400">
             Nachhaltige Landwirtschaft für eine bessere Zukunft.
@@ -21,7 +21,7 @@ import { RouterLink } from 'vue-router'
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-sm font-semibold text-first dark:text-white mb-4">Navigation</h3>
+          <h3 class="text-sm font-semibold text-primary dark:text-white mb-4">Navigation</h3>
           <ul class="space-y-2">
             <li>
               <RouterLink to="/" class="text-sm text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent transition-colors">
@@ -43,7 +43,7 @@ import { RouterLink } from 'vue-router'
 
         <!-- Contact Info -->
         <div>
-          <h3 class="text-sm font-semibold text-first dark:text-white mb-4">Kontakt</h3>
+          <h3 class="text-sm font-semibold text-primary dark:text-white mb-4">Kontakt</h3>
           <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
             <p>E-Mail: info@ernteschwung.de</p>
             <p>Telefon: +49 (0) XXX XXXXXX</p>
