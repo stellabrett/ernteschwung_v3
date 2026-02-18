@@ -35,6 +35,7 @@ const closeMenu = () => {
             <span class="text-white font-bold text-lg">E</span>
           </div>
           <span class="hidden sm:inline text-xl font-bold text-primary dark:text-white">Ernteschwung</span>
+          
         </a>
 
         <!-- Desktop Navigation -->

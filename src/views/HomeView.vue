@@ -12,16 +12,20 @@ const imageModules = import.meta.glob('../assets/images/*', {
 const fallbackImage = imageModules['../assets/images/placeholder.jpg'] || ''
 
 const getImage = (fileName: string) => {
-  return imageModules[`../assets/images/${fileName}`] || fallbackImage
+  return imageModules[`../assets/images/${fileName}`]
 }
 
-const home3 = getImage('home3.WebP')
-const solawiImage = getImage('solawi.WebP')
-const gemuesekisteImage = getImage('gemuesekiste.WebP')
-const jungpflanzenImage = getImage('jungpflanzen.WebP')
-const exkursionenImage = getImage('exkursionen.svg')
-const wiesenheuImage = getImage('wiesenheu.svg')
-const ueberUnsImage = getImage('ueber-uns.svg')
+const getImageWithFallback = (primaryFile: string, fallbackFile: string) => {
+  return getImage(primaryFile) || getImage(fallbackFile) || fallbackImage
+}
+
+const homeImage = getImageWithFallback('Home2.WebP', 'home.svg')
+const solawiImage = getImageWithFallback('Solawi.WebP', 'solawi.svg')
+const gemuesekisteImage = getImageWithFallback('gemuesekiste.WebP', 'gemuesekiste.svg')
+const jungpflanzenImage = getImageWithFallback('Jungpflanzen.WebP', 'jungpflanzen.svg')
+const exkursionenImage = getImageWithFallback('Exkursionen1.WebP', 'exkursionen.svg')
+const wiesenheuImage = getImageWithFallback('Wiesenheu.WebP', 'wiesenheu.svg')
+const ueberUnsImage = getImageWithFallback('Erntedankfest.WebP', 'ueber-uns.svg')
 
 
 const upcomingItems = [
@@ -110,7 +114,7 @@ const sections: Section[] = [
   <div class="space-y-8">
     <section id="home" class="scroll-mt-24">
       <PageHeader
-        :image-src="home3"
+        :image-src="homeImage"
         image-alt="Ernteschwung Header"
         subtext="Faszination – Gemüse – Vielfalt – Natur"
       />
