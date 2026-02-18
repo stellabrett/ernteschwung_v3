@@ -1,16 +1,15 @@
 <script setup lang="ts">
+import PageHeader from '@/components/PageHeader.vue'
 import { RouterLink } from 'vue-router'
 </script>
 
 <template>
   <div class="about-view">
-    <header class="bg-white shadow">
-      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold text-gray-900">
-          About
-        </h1>
-      </div>
-    </header>
+    <PageHeader
+      image-src="https://picsum.photos/seed/ernteschwung-about/1200/800"
+      image-alt="Hof und Team"
+      subtext="Über uns und die Werte von Ernteschwung."
+    />
     
     <main>
       <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import FormInput from '@/components/FormInput.vue'
-import PageHeader from '@/components/PageHeader.vue'
 
 const formData = ref({
   name: '',
@@ -11,20 +10,18 @@ const formData = ref({
 })
 
 const handleSubmit = () => {
-  console.log('Form submitted:', formData.value)
-  // Hier kann die Formular-Logik implementiert werden
+  console.log('Contact form placeholder submit:', formData.value)
 }
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl">
-    <PageHeader
-      image-src="https://picsum.photos/seed/ernteschwung-kontakt/1200/800"
-      image-alt="Kontakt aufnehmen"
-      subtext="Haben Sie Fragen? Schreiben Sie uns, wir melden uns zeitnah zurück."
-    />
+  <section class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    <h2 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Kontakt</h2>
+    <p class="mb-6 text-gray-600 dark:text-gray-300">
+      Nutzen Sie das Formular für Anfragen. Die Anbindung an den Form-Service folgt im nächsten Schritt.
+    </p>
 
-    <form @submit.prevent="handleSubmit" class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    <form @submit.prevent="handleSubmit" class="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-900">
       <FormInput
         v-model="formData.name"
         label="Name"
@@ -63,16 +60,5 @@ const handleSubmit = () => {
         Nachricht senden
       </button>
     </form>
-
-    <div class="mt-8 grid gap-6 sm:grid-cols-2">
-      <div class="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-        <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">E-Mail</h3>
-        <p class="text-gray-600 dark:text-gray-300">info@ernteschwung.de</p>
-      </div>
-      <div class="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-        <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">Telefon</h3>
-        <p class="text-gray-600 dark:text-gray-300">+49 (0) XXX XXXXXX</p>
-      </div>
-    </div>
-  </div>
+  </section>
 </template>

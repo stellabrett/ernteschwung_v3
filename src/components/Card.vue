@@ -41,7 +41,7 @@ const imagePositionClass = computed(() => {
       </div>
       
       <!-- Optional Button Slot -->
-      <div v-if="$slots.button">
+      <div v-if="$slots['button']">
         <slot name="button" />
       </div>
     </div>

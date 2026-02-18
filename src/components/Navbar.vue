@@ -1,53 +1,20 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { RouterLink } from 'vue-router'
-import DarkMode from '@/components/DarkMode.vue';
+import { ref } from 'vue'
+import DarkMode from '@/components/DarkMode.vue'
 
 
 const isOpen = ref(false)
-const isDark = ref(false)
 
 const navLinks = [
-  { name: 'Startseite', to: '/' },
-  { name: 'SoLaWi', to: '/solawi' },
-  { name: 'Jungpflanzen', to: '/jungpflanzen' },
-  { name: 'Exkursionen', to: '/exkursionen' },
-  { name: 'Wiesenheu', to: '/wiesenheu' },
-  { name: 'Kontakt', to: '/contact' }
+  { name: 'HOME', to: '#home' },
+  { name: 'SoLaWi', to: '#solawi' },
+  { name: 'Gemüsekiste', to: '#gemuesekiste' },
+  { name: 'Jungpflanzen', to: '#jungpflanzen' },
+  { name: 'Ausflüge/Exkursionen', to: '#exkursionen' },
+  { name: 'Wiesenheu', to: '#wiesenheu' },
+  { name: 'Über uns', to: '#ueber-uns' },
+  { name: 'Kontakt', to: '#kontakt' }
 ]
-
-onMounted(() => {
-  const darkModeSetting = localStorage.getItem('darkMode')
-  const html = document.documentElement
-  
-  if (darkModeSetting !== null) {
-    if (darkModeSetting === 'true') {
-      html.classList.add('dark')
-      isDark.value = true
-    } else {
-      html.classList.remove('dark')
-      isDark.value = false
-    }
-  } else {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      html.classList.add('dark')
-      isDark.value = true
-    }
-  }
-  
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-  mediaQuery.addEventListener('change', (e) => {
-    if (localStorage.getItem('darkMode') === null) {
-      if (e.matches) {
-        html.classList.add('dark')
-        isDark.value = true
-      } else {
-        html.classList.remove('dark')
-        isDark.value = false
-      }
-    }
-  })
-})
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
@@ -56,17 +23,6 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isOpen.value = false
 }
-
-const toggleDarkMode = () => {
-  const html = document.documentElement
-  isDark.value = !isDark.value
-  if (isDark.value) {
-    html.classList.add('dark')
-  } else {
-    html.classList.remove('dark')
-  }
-  localStorage.setItem('darkMode', String(isDark.value))
-}
 </script>
 
 <template>
@@ -74,42 +30,28 @@ const toggleDarkMode = () => {
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
-        <RouterLink to="/" class="flex items-center space-x-2 flex-shrink-0">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+        <a href="#home" class="flex items-center space-x-2 shrink-0">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-primary to-accent">
             <span class="text-white font-bold text-lg">E</span>
           </div>
           <span class="hidden sm:inline text-xl font-bold text-primary dark:text-white">Ernteschwung</span>
-        </RouterLink>
+        </a>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-1">
-          <RouterLink
+        <div class="hidden md:flex items-center space-x-1 overflow-x-auto">
+          <a
             v-for="link in navLinks"
             :key="link.to"
-            :to="link.to"
+            :href="link.to"
             class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-accent transition-colors"
-            active-class="bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"
           >
             {{ link.name }}
-          </RouterLink>
+          </a>
         </div>
    
         <!-- Right Side: Dark Mode Toggle + Mobile Menu Button -->
         <div class="flex items-center space-x-2">
-              <DarkMode />
-          <!-- Dark Mode Toggle -->
-          <button
-            @click="toggleDarkMode"
-            class="p-2 rounded-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors"
-            :aria-label="isDark ? 'Light mode' : 'Dark mode'"
-          >
-            <svg v-if="!isDark" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-            <svg v-else class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm0 4a1 1 0 11-2 0 1 1 0 012 0zm3-7a1 1 0 100-2 1 1 0 000 2zm0 4a1 1 0 11-2 0 1 1 0 012 0zM2 11a1 1 0 100-2 1 1 0 000 2zm0 4a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
-            </svg>
-          </button>
+          <DarkMode />
 
           <!-- Mobile Menu Button -->
           <button
@@ -132,16 +74,15 @@ const toggleDarkMode = () => {
         v-show="isOpen"
         class="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 py-2"
       >
-        <RouterLink
+        <a
           v-for="link in navLinks"
           :key="link.to"
-          :to="link.to"
+          :href="link.to"
           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-accent transition-colors"
-          active-class="bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"
           @click="closeMenu"
         >
           {{ link.name }}
-        </RouterLink>
+        </a>
       </div>
     </div>
   </nav>
