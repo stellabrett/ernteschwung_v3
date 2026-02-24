@@ -6,7 +6,7 @@ import DarkMode from '@/components/DarkMode.vue'
 const isOpen = ref(false)
 
 const navLinks = [
-  { name: 'HOME', to: '#home' },
+  { name: 'Home', to: '#home' },
   { name: 'SoLaWi', to: '#solawi' },
   { name: 'Gemüsekiste', to: '#gemuesekiste' },
   { name: 'Jungpflanzen', to: '#jungpflanzen' },
@@ -31,11 +31,14 @@ const closeMenu = () => {
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <a href="#home" class="flex items-center space-x-2 shrink-0">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-primary to-accent">
+       <!--    <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-primary to-accent">
             <span class="text-white font-bold text-lg">E</span>
+          </div> -->
+          <div class="flex h-14 ">
+            <img src="@/assets/images/Logo_Schriftzug_freigestellt_klein.png" alt="Logo Ernteschwung"  />
           </div>
-          <span class="hidden sm:inline text-xl font-bold text-primary dark:text-white">Ernteschwung</span>
-          
+<!--           <span class="hidden sm:inline text-xl font-bold text-primary dark:text-white">Ernteschwung</span>
+ -->          
         </a>
 
         <!-- Desktop Navigation -->

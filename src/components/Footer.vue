@@ -15,8 +15,7 @@ import { RouterLink } from 'vue-router'
             <span class="text-lg font-bold text-primary dark:text-white">Ernteschwung</span>
           </div>
           <p class="text-sm text-gray-600 dark:text-gray-400">
-            Nachhaltige Landwirtschaft für eine bessere Zukunft.
-          </p>
+Faszination – Gemüse – Vielfalt – Natur          </p>
         </div>
 
         <!-- Quick Links -->
@@ -45,9 +44,9 @@ import { RouterLink } from 'vue-router'
         <div>
           <h3 class="text-sm font-semibold text-primary dark:text-white mb-4">Kontakt</h3>
           <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-            <p>E-Mail: info@ernteschwung.de</p>
-            <p>Telefon: +49 (0) XXX XXXXXX</p>
-            <p>Adresse: Musterstraße 1, 12345 Musterstadt</p>
+            <p>E-Mail: gemuese@ernteschwung.at</p>
+            <p>Telefon:  +43 664 1013547</p>
+            <p>Adresse: Entschendorf 35, 8321 St. Margarethen, Austria</p>
           </div>
         </div>
       </div>

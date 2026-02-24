@@ -1,28 +1,34 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue'
+import { computed } from 'vue'
 
-const props = defineProps({
-  name: {
-    type: String,
-    required: true,
-  },
-})
+const props = defineProps<{
+  name: string
+}>()
 
-// feel free to update this with an svg directory of your choice
-const icon = defineAsyncComponent(async () => {
-  if (props.name == '') {
-    return await new Promise(() => {})
+const iconModules = import.meta.glob('/src/assets/icons/*.svg', {
+  eager: true,
+  import: 'default',
+  query: '?raw'
+}) as Record<string, string>
+
+const iconMarkup = computed(() => {
+  if (!props.name) {
+    return ''
   }
-  try {
-    return await import(`@/assets/icons/${props.name}.svg`)
-  } catch {
-    console.error('Icon props error')
-  }
+
+  const iconPath = `/src/assets/icons/${props.name}.svg`
+  return iconModules[iconPath] || ''
 })
 </script>
 
 <template>
-  <component :is="icon" class="fill-current" />
+  <span v-if="iconMarkup" class="icon" v-html="iconMarkup" />
 </template>
 
-<style scoped></style>
+<style scoped>
+.icon :deep(svg) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+</style>

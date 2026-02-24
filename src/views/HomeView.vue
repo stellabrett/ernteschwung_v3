@@ -3,6 +3,11 @@ import Card from '@/components/Card.vue'
 import PageHeader from '@/components/PageHeader.vue'
 import UpcomingSection from '@/components/UpcomingSection.vue'
 import ContactFormSection from '@/components/ContactFormSection.vue'
+import SolawiSection from '@/components/SolawiSection.vue'
+import GemuesekisteSection from '@/components/GemuesekisteSection.vue'
+import JungpflanzenSection from '@/components/JungpflanzenSection.vue'
+import ExkursionenSection from '@/components/ExkursionenSection.vue'
+import WiesenheuSection from '@/components/WiesenheuSection.vue'
 
 const imageModules = import.meta.glob('../assets/images/*', {
   eager: true,
@@ -60,46 +65,6 @@ interface Section {
 
 const sections: Section[] = [
   {
-    id: 'solawi',
-    title: 'SoLaWi',
-    text: 'In unserer solidarischen Landwirtschaft tragen viele gemeinsam die Verantwortung. So entstehen faire Preise, Transparenz und echte Nähe zur Produktion.',
-    imageSrc: solawiImage,
-    imageAlt: 'Solidarische Landwirtschaft',
-    imagePosition: 'right'
-  },
-  {
-    id: 'gemuesekiste',
-    title: 'Gemüsekiste',
-    text: 'Unsere Gemüsekiste bringt saisonale Frische direkt zu Ihnen. Jede Lieferung enthält abwechslungsreiche Produkte aus regionalem und naturnahem Anbau.',
-    imageSrc: gemuesekisteImage,
-    imageAlt: 'Gemüsekiste',
-    imagePosition: 'left'
-  },
-  {
-    id: 'jungpflanzen',
-    title: 'Jungpflanzen',
-    text: 'Für Garten, Balkon oder Hof bieten wir kräftige Jungpflanzen mit Fokus auf Geschmack, Robustheit und Sortenvielfalt für die Saison.',
-    imageSrc: jungpflanzenImage,
-    imageAlt: 'Jungpflanzen',
-    imagePosition: 'right'
-  },
-  {
-    id: 'exkursionen',
-    title: 'Ausflüge/Exkursionen',
-    text: 'Bei Führungen und Ausflügen teilen wir Wissen aus der Praxis. Erleben Sie Naturkreisläufe, Anbaumethoden und die Menschen hinter Ernteschwung.',
-    imageSrc: exkursionenImage,
-    imageAlt: 'Ausflüge und Exkursionen',
-    imagePosition: 'left'
-  },
-  {
-    id: 'wiesenheu',
-    title: 'Wiesenheu',
-    text: 'Unser Wiesenheu wird sorgfältig geerntet und gelagert. Das sorgt für natürliche Qualität, gute Struktur und verlässliche Versorgung.',
-    imageSrc: wiesenheuImage,
-    imageAlt: 'Wiesenheu',
-    imagePosition: 'right'
-  },
-  {
     id: 'ueber-uns',
     title: 'Über uns',
     text: 'Hinter Ernteschwung steht ein Team mit Herz für ökologische Landwirtschaft. Wir arbeiten partnerschaftlich und mit Blick auf langfristige Bodenfruchtbarkeit.',
@@ -121,6 +86,26 @@ const sections: Section[] = [
     </section>
 
     <UpcomingSection :items="upcomingItems" />
+
+    <section id="solawi" class="scroll-mt-24">
+      <SolawiSection :image-src="solawiImage" />
+    </section>
+
+    <section id="gemuesekiste" class="scroll-mt-24">
+      <GemuesekisteSection :image-src="gemuesekisteImage" />
+    </section>
+
+    <section id="jungpflanzen" class="scroll-mt-24">
+      <JungpflanzenSection :image-src="jungpflanzenImage" />
+    </section>
+
+    <section id="exkursionen" class="scroll-mt-24">
+      <ExkursionenSection :image-src="exkursionenImage" />
+    </section>
+
+    <section id="wiesenheu" class="scroll-mt-24">
+      <WiesenheuSection :image-src="wiesenheuImage" />
+    </section>
 
     <section
       v-for="section in sections"
