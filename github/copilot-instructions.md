@@ -2,3 +2,4 @@
 - schreibe wiederverewendbaren Code in Form von Funktionen und Komponenten
 - verwende Tailwind Variablen, kein instyle CSS
 - nutze die composition API script setup  von Vue 3
+- mobile first design

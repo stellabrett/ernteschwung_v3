@@ -15,7 +15,7 @@ defineProps<Props>()
     image-position="left"
   >
     <template #title>
-      Ausflüge/Exkursionen
+      Ausflüge/ Exkursionen
     </template>
 
     <template #text>

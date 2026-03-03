@@ -9,6 +9,16 @@ const routes: RouteRecordRaw[] = [
     component: HomeView
   },
   {
+    path: '/impressum',
+    name: 'impressum',
+    component: () => import('@/views/ImpressumView.vue')
+  },
+  {
+    path: '/vorbestellen',
+    name: 'vorbestellen',
+    component: () => import('@/views/PreOrderView.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     redirect: '/'
   }

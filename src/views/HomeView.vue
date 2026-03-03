@@ -26,7 +26,6 @@ const getImageWithFallback = (primaryFile: string, fallbackFile: string) => {
 
 const homeImage = getImageWithFallback('Home2.WebP', 'home.svg')
 const solawiImage = getImageWithFallback('Solawi.WebP', 'solawi.svg')
-const gemuesekisteImage = getImageWithFallback('gemuesekiste.WebP', 'gemuesekiste.svg')
 const jungpflanzenImage = getImageWithFallback('Jungpflanzen.WebP', 'jungpflanzen.svg')
 const exkursionenImage = getImageWithFallback('Exkursionen1.WebP', 'exkursionen.svg')
 const wiesenheuImage = getImageWithFallback('Wiesenheu.WebP', 'wiesenheu.svg')
@@ -78,11 +77,8 @@ const sections: Section[] = [
 <template>
   <div class="space-y-8">
     <section id="home" class="scroll-mt-24">
-      <PageHeader
-        :image-src="homeImage"
-        image-alt="Ernteschwung Header"
-        subtext="Faszination – Gemüse – Vielfalt – Natur"
-      />
+      <PageHeader/>
+    
     </section>
 
     <UpcomingSection :items="upcomingItems" />
@@ -92,7 +88,7 @@ const sections: Section[] = [
     </section>
 
     <section id="gemuesekiste" class="scroll-mt-24">
-      <GemuesekisteSection :image-src="gemuesekisteImage" />
+      <GemuesekisteSection />
     </section>
 
     <section id="jungpflanzen" class="scroll-mt-24">

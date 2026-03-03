@@ -2,12 +2,13 @@
 import { computed } from 'vue'
 
 interface Props {
-  imageSrc: string
+  imageSrc?: string
   imageAlt?: string
   imagePosition?: 'left' | 'right'
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  imageSrc: '',
   imageAlt: '',
   imagePosition: 'left'
 })
@@ -24,11 +25,14 @@ const imagePositionClass = computed(() => {
   >
     <!-- Image Section -->
     <div class="w-full md:w-1/2">
-      <img 
-        :src="imageSrc" 
-        :alt="imageAlt" 
-        class="h-full w-full rounded-lg object-cover"
-      />
+      <slot name="image">
+        <img 
+          v-if="imageSrc"
+          :src="imageSrc" 
+          :alt="imageAlt" 
+          class="h-full w-full rounded-lg object-cover"
+        />
+      </slot>
     </div>
 
     <!-- Content Section -->

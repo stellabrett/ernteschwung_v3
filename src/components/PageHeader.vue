@@ -1,9 +1,5 @@
 <script setup lang="ts">
-defineProps<{
-  imageSrc: string
-  imageAlt?: string
-  subtext: string
-}>()
+
 </script>
 
 <template>
@@ -11,16 +7,20 @@ defineProps<{
     <div class="grid md:grid-cols-3">
       <div class="md:col-span-2">
         <img
-          :src="imageSrc"
-          :alt="imageAlt || 'Ernteschwung Header Bild'"
+          src="@/assets/images/home3.WebP"
+          alt="Feld mit Folientunnel"
+        
           class="h-64 w-full object-cover md:h-full"
         >
       </div>
 
       <div class="flex flex-col justify-center p-6 sm:p-8">
         <h1 class="mb-2 text-3xl font-bold text-primary dark:text-white">ERNTESCHWUNG</h1>
-        <p class="text-gray-600 dark:text-gray-300">{{ subtext }}</p>
-      </div>
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">Faszination – Gemüse – Vielfalt – Natur</p>
+         <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">Unsere Begeisterung für die natürliche Vielfalt trifft auf deine Liebe zum guten Geschmack –
+
+Auf geht‘s!</p>
+         </div>
     </div>
   </header>
 </template>
