@@ -105,6 +105,15 @@ function resetForm() {
 
 <template>
   <div class="mx-auto max-w-3xl px-4 py-12">
+    <!-- Zurück-Link -->
+    <router-link
+      to="/#gemuesekiste"
+      class="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 transition hover:text-primary dark:text-gray-400 dark:hover:text-accent"
+    >
+      <Icon name="arrow_left" class="h-4 w-4" />
+      Zurück zur Übersicht
+    </router-link>
+
     <h1 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
       Gemüsekiste vorbestellen
     </h1>

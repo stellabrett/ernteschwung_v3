@@ -1,20 +1,27 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import DarkMode from '@/components/DarkMode.vue'
 
-
+const route = useRoute()
 const isOpen = ref(false)
 
 const navLinks = [
-  { name: 'Home', to: '#home' },
-  { name: 'SoLaWi', to: '#solawi' },
-  { name: 'Gemüsekiste', to: '#gemuesekiste' },
-  { name: 'Jungpflanzen', to: '#jungpflanzen' },
-  { name: 'Ausflüge/Exkursionen', to: '#exkursionen' },
-  { name: 'Wiesenheu', to: '#wiesenheu' },
-  { name: 'Über uns', to: '#ueber-uns' },
-  { name: 'Kontakt', to: '#kontakt' }
+  { name: 'Home', hash: '#home' },
+  { name: 'SoLaWi', hash: '#solawi' },
+  { name: 'Gemüsekiste', hash: '#gemuesekiste' },
+  { name: 'Jungpflanzen', hash: '#jungpflanzen' },
+  { name: 'Ausflüge/Exkursionen', hash: '#exkursionen' },
+  { name: 'Wiesenheu', hash: '#wiesenheu' },
+  { name: 'Über uns', hash: '#ueber-uns' },
+  { name: 'Kontakt', hash: '#kontakt' }
 ]
+
+const linkTo = (hash: string) => {
+  // On home: just the hash; on other pages: navigate to home + hash
+  if (route.path === '/') return hash
+  return '/' + hash
+}
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
@@ -30,7 +37,7 @@ const closeMenu = () => {
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
-        <a href="#home" class="flex items-center space-x-2 shrink-0">
+        <router-link to="/" class="flex items-center space-x-2 shrink-0">
        <!--    <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-primary to-accent">
             <span class="text-white font-bold text-lg">E</span>
           </div> -->
@@ -39,18 +46,18 @@ const closeMenu = () => {
           </div>
 <!--           <span class="hidden sm:inline text-xl font-bold text-primary dark:text-white">Ernteschwung</span>
  -->          
-        </a>
+        </router-link>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-1 overflow-x-auto">
-          <a
+          <router-link
             v-for="link in navLinks"
-            :key="link.to"
-            :href="link.to"
+            :key="link.hash"
+            :to="linkTo(link.hash)"
             class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-accent transition-colors"
           >
             {{ link.name }}
-          </a>
+          </router-link>
         </div>
    
         <!-- Right Side: Dark Mode Toggle + Mobile Menu Button -->
@@ -78,15 +85,15 @@ const closeMenu = () => {
         v-show="isOpen"
         class="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 py-2"
       >
-        <a
+        <router-link
           v-for="link in navLinks"
-          :key="link.to"
-          :href="link.to"
+          :key="link.hash"
+          :to="linkTo(link.hash)"
           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-accent transition-colors"
           @click="closeMenu"
         >
           {{ link.name }}
-        </a>
+        </router-link>
       </div>
     </div>
   </nav>
