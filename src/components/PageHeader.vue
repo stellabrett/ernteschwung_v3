@@ -6,7 +6,7 @@
   <header class="relative mb-8 -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden">
     <!-- Vollbreites Bild -->
     <img
-      src="@/assets/images/home3.WebP"
+      src="@/assets/images/Home.WebP"
       alt="Feld mit Folientunnel"
       class="h-80 w-full object-cover md:h-112 xl:h-128"
     >

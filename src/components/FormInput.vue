@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
   type: 'text',
   placeholder: '',
   required: false,
-  error: 'undefined',
+  error: '',
   multiline: false,
   rows: 4
 })

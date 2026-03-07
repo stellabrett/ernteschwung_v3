@@ -3,3 +3,4 @@
 - verwende Tailwind Variablen, kein instyle CSS
 - nutze die composition API script setup  von Vue 3
 - mobile first design
+- use the Icon.vue component for all icons, do not use svg directly in the code

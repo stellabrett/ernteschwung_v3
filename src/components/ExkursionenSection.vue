@@ -12,7 +12,7 @@ defineProps<Props>()
   <Card
     :image-src="imageSrc"
     image-alt="Ausflüge und Exkursionen"
-    image-position="left"
+    image-position="right"
   >
     <template #title>
       Ausflüge/ Exkursionen

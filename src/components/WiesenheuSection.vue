@@ -12,7 +12,7 @@ defineProps<Props>()
   <Card
     :image-src="imageSrc"
     image-alt="Wiesenheu"
-    image-position="right"
+    image-position="left"
   >
     <template #title>
       Wiesenheu
