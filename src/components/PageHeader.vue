@@ -12,9 +12,9 @@
     >
 
     <!-- Text-Banner im unteren Drittel -->
-    <div class="absolute inset-x-0 bottom-0 bg-white/45 backdrop-blur-sm px-6 py-6 sm:px-10 sm:py-8 text-center">
-      <h1 class="text-3xl font-bold text-gray-900 md:text-4xl">ERNTESCHWUNG</h1>
-      <p class="mt-2 text-sm text-gray-900/85 sm:text-base">Faszination – Gemüse – Vielfalt – Natur</p>
+    <div class="absolute inset-x-0 bottom-0 px-6 py-8 sm:px-10 sm:py-10 text-center bg-accent. 90 backdrop-blur-sm rounded-t-lg">
+      <h1 class="text-4xl font-bold text-white drop-shadow-lg md:text-5xl tracking-wide">ERNTESCHWUNG</h1>
+      <p class="mt-3 text-sm text-white/90 sm:text-base font-medium tracking-wider">Faszination – Gemüse – Vielfalt – Natur</p>
     </div>
   </header>
 </template>

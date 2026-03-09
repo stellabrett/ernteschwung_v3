@@ -5,8 +5,7 @@ import Icon from '@/components/Icon.vue'
 
 const pickupLocations = [
   { name: 'Ernteschwung Hof', address: 'Entschendorf 35, 8321 St. Margarethen' },
-  { name: 'Mohoga', address: 'Moserhofgasse 51, 8010 Graz' },
-  { name: 'Biosphäre', address: 'Ludersdorf 85, 8200 Gleisdorf' },
+
   { name: 'Sommerberg', address: 'Takern I 128, 8321 St. Margarethen' }
 ]
 

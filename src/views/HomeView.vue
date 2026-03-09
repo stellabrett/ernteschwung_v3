@@ -32,7 +32,8 @@ const jungpflanzenImage = getImageWithFallback('Jungpflanzen.WebP', 'jungpflanze
 const exkursionenImage = getImageWithFallback('Exkursionen1.WebP', 'exkursionen.svg')
 const wiesenheuImage = getImageWithFallback('Wiesenheu.WebP', 'wiesenheu.svg')
 const willkommenImage = getImageWithFallback('Willkommen.WebP', 'home.svg')
-const ueberUnsImage = getImageWithFallback('Erntedankfest.WebP', 'ueber-uns.svg')
+const ueberUnsImage1 = getImageWithFallback('UeberUns1.WebP', 'ueber-uns.svg')
+const ueberUnsImage2 = getImageWithFallback('UeberUns2.WebP', 'ueber-uns.svg')
 const erntedankfestImage = getImageWithFallback('Erntedankfest.WebP', 'ueber-uns.svg')
 const halloFruehlingImage = getImage('HalloFruehling.jpg') || fallbackImage
 const jungpflanzenmaerkteImage = getImage('JungpflanzenmarktFlyer.jpg') || fallbackImage
@@ -57,7 +58,7 @@ const upcomingItems = [
 </script>
 
 <template>
-  <div class="space-y-8">
+  <div class="space-y-16">
     <section id="home" class="scroll-mt-24">
       <PageHeader/>
     
@@ -94,7 +95,7 @@ const upcomingItems = [
     </section>
 
     <section id="ueber-uns" class="scroll-mt-24">
-      <UeberUnsSection :image-src="ueberUnsImage" />
+      <UeberUnsSection :image-src1="ueberUnsImage1" :image-src2="ueberUnsImage2" />
     </section>
 
     <section id="kontakt" class="scroll-mt-24">

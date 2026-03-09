@@ -20,7 +20,7 @@ defineProps<Props>()
     </template>
 
     <template #text>
-      <p>
+      <p class="leading-relaxed">
         Die Solidarische Landwirtschaft, auch CSA (Community Supported Agriculture) ist ein bewährtes Konzept, das eine
         unabhängige, krisenfeste und zukunftsfähige Landwirtschaft ermöglicht. Der Großteil unserer Gemüseproduktion wird
         schon im Voraus finanziert. Als ErnteteilerIn bekommst du dafür einen Anteil der Gemüseernte zugesichert. Diese

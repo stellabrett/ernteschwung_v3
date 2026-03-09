@@ -35,31 +35,31 @@ function goToPreOrder() {
 
     <template #text>
 <div class="flex gap-2 flex-nowrap">
-    <Icon name="leave" class="mb-4 h-6 w-6 text-green-500" />
+    <Icon name="leave" class="mb-4 h-6 w-6 text-green-800" />
     <p>Erntefrisches Bio-Gemüse für 2 Personen</p>
 </div>
 <div class="flex gap-2 flex-nowrap">
-    <Icon name="leave" class="mb-4 h-6 w-6 text-green-500" />
+    <Icon name="leave" class="mb-4 h-6 w-6 text-green-800" />
     <p>5-8 verschiedene Gemüsearten pro Woche</p>
 </div>
 <div class="flex gap-2 flex-nowrap">
-    <Icon name="leave" class="mb-4 h-6 w-6 text-green-500" />
+    <Icon name="leave" class="mb-4 h-6 w-6 text-green-800" />
     <p>Für dich oder als Geschenk </p>
 </div>
 <div class="flex gap-2 flex-nowrap">
-    <Icon name="leave" class="mb-4 h-6 w-6 text-green-500" />
+    <Icon name="leave" class="mb-4 h-6 w-6 text-green-800" />
     <p>Einmalig oder für bis zu 2 Monate lang wöchentlich</p>
 </div>
 <div class="flex gap-2 flex-nowrap">
-    <Icon name="leave" class="mb-4 h-6 w-6 text-green-500" />
+    <Icon name="leave" class="mb-4 h-6 w-6 text-green-800" />
     <p>Verfügbar Freitags von April-Dezember</p>
 </div>
 <div class="flex gap-2 flex-nowrap">
-    <Icon name="leave" class="mb-4 h-6 w-6 text-green-500" />
+    <Icon name="leave" class="mb-4 h-6 w-6 text-green-800" />
     <p>Abholbar in Entschendorf, Sommerberg, Gleisdorf, Graz oder nach Absprache</p>
 </div>
 <div class="flex gap-2 flex-nowrap">
-    <Icon name="leave" class="mb-4 h-6 w-6 text-green-500" />
+    <Icon name="leave" class="mb-4 h-6 w-6 text-green-800" />
     <p>€26,-/Woche - ohne Bindung</p>
 </div>
     </template>

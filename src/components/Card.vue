@@ -20,17 +20,17 @@ const imagePositionClass = computed(() => {
 
 <template>
   <div 
-    class="flex flex-col gap-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+    class="flex flex-col gap-8 rounded-2xl bg-white p-6 md:p-8 shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800"
     :class="imagePositionClass"
   >
     <!-- Image Section -->
-    <div class="w-full md:w-1/2">
+    <div class="w-full md:w-1/2 overflow-hidden rounded-xl">
       <slot name="image">
         <img 
           v-if="imageSrc"
           :src="imageSrc" 
           :alt="imageAlt" 
-          class="h-full w-full rounded-lg object-cover"
+          class="h-full w-full rounded-xl object-cover transition-transform duration-500 hover:scale-105"
         />
       </slot>
     </div>
@@ -40,12 +40,12 @@ const imagePositionClass = computed(() => {
       <h3 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
         <slot name="title" />
       </h3>
-      <div class="mb-6 text-gray-600 dark:text-gray-300">
+      <div class="text-gray-600 leading-relaxed dark:text-gray-300">
         <slot name="text" />
       </div>
       
       <!-- Optional Button Slot -->
-      <div v-if="$slots['button']">
+      <div v-if="$slots['button']" class="mt-6">
         <slot name="button" />
       </div>
     </div>

@@ -19,7 +19,7 @@ defineProps<Props>()
     </template>
 
     <template #text>
-      <p>
+      <p class="leading-relaxed">
   Weil wir mit Leidenschaft bei der Sache sind, ist es uns ein Herzensanliegen die Ernte gebührend zu feiern. Wenn die Hagelsaison im September zu Ende geht, lassen wir das Donnergrollen
         der Sommermonate hinter uns und verbreiten den Klang von Freude, Leichtigkeit und Dankbarkeit auf unserem Hügel.
         Alle, die von uns Gemüse beziehen, NachbarInnen, Freunde, Verwandte &amp; Bekannte sind eingeladen, eine schöne

@@ -22,9 +22,8 @@ const click = () => {
   <button
     @click="click"
     :ariaLabel="ariaLabel"
-    class="appearance-none rounded-lg cursor-pointer bg-primary text-neutral-50 outline-1 outline-primary
-  hover:bg-primary-light  py-2 px-4 inline-block text-center text-sm leading-tight hover:scale-105 shadow-lg
- from-primary  to-secondary  focus:ring-4 focus:outline-none focus:ring-emerald-300  shadow-secondary/20 " >
+    class="inline-flex items-center gap-2 rounded-lg cursor-pointer bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-md shadow-primary/25 transition-all duration-200 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 focus:ring-4 focus:outline-none focus:ring-primary/30"
+  >
     <slot name="icon-prefix">
       <icon v-if="iconPrefix" name="props.iconPrefix" class="w-4 h-4 mr-2"></icon>
     </slot>

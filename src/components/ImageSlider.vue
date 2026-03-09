@@ -14,11 +14,15 @@ const currentImage = computed(() => props.images[currentIndex.value] as { src: s
 
 const totalImages = computed(() => props.images.length)
 
+const slideDirection = ref<'left' | 'right'>('left')
+
 function next() {
+  slideDirection.value = 'left'
   currentIndex.value = (currentIndex.value + 1) % totalImages.value
 }
 
 function prev() {
+  slideDirection.value = 'right'
   currentIndex.value = (currentIndex.value - 1 + totalImages.value) % totalImages.value
 }
 </script>
@@ -27,7 +31,7 @@ function prev() {
   <div class="relative w-full overflow-hidden rounded-lg">
     <!-- Image -->
     <div class="relative aspect-4/3 w-full">
-      <transition name="fade" mode="out-in">
+      <transition :name="slideDirection === 'left' ? 'slide-left' : 'slide-right'" mode="out-in">
         <img
           v-if="currentImage"
           :key="currentIndex"
@@ -71,13 +75,35 @@ function prev() {
 </template>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.15s ease;
+/* Slide left (next) */
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.slide-left-enter-from {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-left-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/* Slide right (prev) */
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.slide-right-enter-from {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.slide-right-leave-to {
+  transform: translateX(100%);
   opacity: 0;
 }
 </style>

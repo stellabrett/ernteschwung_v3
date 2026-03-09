@@ -19,7 +19,7 @@ defineProps<Props>()
     </template>
 
     <template #text>
-      <p>
+      <p class="leading-relaxed">
         Hier treffen sich DEINE Liebe zum guten Geschmack und UNSERE Begeisterung für die natürliche Vielfalt.
         Neben erntefrischem Bio-Gemüse aus unserem Marktgarten gibt es bei uns Jungpflanzen aus torffreier Anzucht
         und Wiesenheu in Kleinballen. Als Solidarische Landwirtschaft setzen wir neue Akzente in der regionalen

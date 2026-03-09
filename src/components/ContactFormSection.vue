@@ -15,13 +15,13 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <section class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+  <section class="rounded-2xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
     <h2 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Kontakt</h2>
-    <p class="mb-6 text-gray-600 dark:text-gray-300">
+    <p class="mb-8 text-gray-600 dark:text-gray-300">
       Nutzen Sie das Formular für Anfragen. Die Anbindung an den Form-Service folgt im nächsten Schritt.
     </p>
 
-    <form @submit.prevent="handleSubmit" class="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-900">
+    <form @submit.prevent="handleSubmit" class="space-y-1">
       <FormInput
         v-model="formData.name"
         label="Name"
@@ -55,7 +55,7 @@ const handleSubmit = () => {
 
       <button
         type="submit"
-        class="w-full rounded-lg bg-primary px-5 py-3 text-center text-sm font-medium text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/50 dark:bg-accent dark:hover:bg-accent/90 dark:focus:ring-accent/50"
+        class="w-full rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-white shadow-md shadow-primary/25 transition-all duration-200 hover:bg-primary/90 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30 dark:bg-accent dark:hover:bg-accent/90 dark:focus:ring-accent/30"
       >
         Nachricht senden
       </button>
