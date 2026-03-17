@@ -25,12 +25,27 @@ function prev() {
   slideDirection.value = 'right'
   currentIndex.value = (currentIndex.value - 1 + totalImages.value) % totalImages.value
 }
+
+function handleKeydown(event: KeyboardEvent) {
+  if (event.key === 'ArrowLeft') {
+    prev()
+  } else if (event.key === 'ArrowRight') {
+    next()
+  }
+}
 </script>
 
 <template>
-  <div class="relative w-full overflow-hidden rounded-lg">
+  <div
+    class="relative w-full overflow-hidden rounded-lg"
+    role="region"
+    aria-roledescription="Bilderkarussell"
+    aria-label="Bildergalerie"
+    tabindex="0"
+    @keydown="handleKeydown"
+  >
     <!-- Image -->
-    <div class="relative aspect-4/3 w-full">
+    <div class="relative aspect-4/3 w-full" aria-live="polite">
       <transition :name="slideDirection === 'left' ? 'slide-left' : 'slide-right'" mode="out-in">
         <img
           v-if="currentImage"

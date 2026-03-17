@@ -22,7 +22,7 @@ const iconMarkup = computed(() => {
 </script>
 
 <template>
-  <span v-if="iconMarkup" class="icon" v-html="iconMarkup" />
+  <span v-if="iconMarkup" class="icon" v-html="iconMarkup" aria-hidden="true" role="img" />
 </template>
 
 <style scoped>

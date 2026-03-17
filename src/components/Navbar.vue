@@ -69,7 +69,8 @@ const closeMenu = () => {
           <button
             @click="toggleMenu"
             class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors"
-            :aria-label="isOpen ? 'Close menu' : 'Open menu'"
+            :aria-label="isOpen ? 'Menü schließen' : 'Menü öffnen'"
+            :aria-expanded="isOpen"
           >
             <Icon v-if="!isOpen" name="menu" class="w-6 h-6" />
             <Icon v-else name="close" class="w-6 h-6 " />
@@ -88,6 +89,8 @@ const closeMenu = () => {
       <div
         v-show="isOpen"
         class="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 backdrop-blur-md dark:bg-gray-800/95 py-2"
+        role="navigation"
+        aria-label="Mobile Navigation"
       >
         <router-link
           v-for="link in navLinks"

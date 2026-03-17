@@ -18,7 +18,7 @@ const click = () => {
 <template>
   <button
     @click="click"
-    :ariaLabel="ariaLabel"
+    :aria-label="ariaLabel"
     class="appearance-none cursor-pointer
     text-neutral-50 border-b-neutral-50    rounded-lg
        focus:outline-2  outline-1

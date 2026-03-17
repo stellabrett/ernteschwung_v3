@@ -20,9 +20,10 @@ const click = () => {
 
 <template>
   <button
+    :type="(type as any) || 'button'"
     @click="click"
-    :ariaLabel="ariaLabel"
-    class="inline-flex items-center gap-2 rounded-lg cursor-pointer bg-primary px-6 py-2.5 text-center text-sm font-semibold text-white shadow-md shadow-primary/25 transition-all duration-200 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 focus:ring-4 focus:outline-none focus:ring-primary/30"
+    :aria-label="ariaLabel"
+    class="inline-flex items-center justify-center gap-2 rounded-lg cursor-pointer bg-accent px-6 py-2.5 text-center text-sm font-semibold text-white shadow-md shadow-accent/25 transition-all duration-200 hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/30 focus:ring-2 focus:outline-none focus:ring-accent/30"
   >
     <slot name="icon-prefix">
       <icon v-if="iconPrefix" name="props.iconPrefix" class="w-4 h-4 mr-2"></icon>

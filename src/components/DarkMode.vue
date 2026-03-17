@@ -46,7 +46,7 @@ onMounted(() => {
   <button
     @click="toggleDark"
     class="p-2 rounded-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors"
-    :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'"
+    :aria-label="theme === 'dark' ? 'Helles Design' : theme === 'light' ? 'Dunkles Design' : 'Systemdesign'"
   >
     <Icon v-if="theme === 'dark'" name="light" class="h-5 w-5" />
     <Icon v-else name="dark" class="h-5 w-5" />

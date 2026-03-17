@@ -212,12 +212,13 @@ function handleSubmit(event: Event) {
             type="button"
             @click="decrementWeeks"
             :disabled="form.weeks <= 1"
+            aria-label="Woche verringern"
             class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-lg font-bold text-gray-700 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
           >
             −
           </button>
 
-          <div class="text-center">
+          <div class="text-center" aria-live="polite">
             <span class="text-3xl font-bold text-primary dark:text-accent">
               {{ form.weeks }}
             </span>
@@ -230,6 +231,7 @@ function handleSubmit(event: Event) {
             type="button"
             @click="incrementWeeks"
             :disabled="form.weeks >= 8"
+            aria-label="Woche erhöhen"
             class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-lg font-bold text-gray-700 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
           >
             +
@@ -330,12 +332,14 @@ function handleSubmit(event: Event) {
             <button
               type="button"
               @click.prevent="dsgvoOpen = !dsgvoOpen"
+              :aria-expanded="dsgvoOpen"
               class="font-medium text-primary underline hover:text-primary/80 dark:text-accent dark:hover:text-accent/80"
             >Datenschutzerklärung</button>
             und den
             <button
               type="button"
               @click.prevent="agbOpen = !agbOpen"
+              :aria-expanded="agbOpen"
               class="font-medium text-primary underline hover:text-primary/80 dark:text-accent dark:hover:text-accent/80"
             >Allgemeinen Bestellbedingungen</button>
             zu.

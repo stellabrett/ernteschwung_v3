@@ -24,6 +24,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/OrderSuccessView.vue')
   },
   {
+    path: '/kontakt/danke',
+    name: 'contact-success',
+    component: () => import('@/views/ContactSuccessView.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     redirect: '/'
   }

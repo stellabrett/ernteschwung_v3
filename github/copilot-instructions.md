@@ -4,3 +4,4 @@
 - nutze die composition API script setup  von Vue 3
 - mobile first design
 - use the Icon.vue component for all icons, do not use svg directly in the code
+- use ui components for buttons, do not use button elements directly in the code
