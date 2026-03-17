@@ -19,6 +19,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/PreOrderView.vue')
   },
   {
+    path: '/vorbestellen/danke',
+    name: 'order-success',
+    component: () => import('@/views/OrderSuccessView.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     redirect: '/'
   }

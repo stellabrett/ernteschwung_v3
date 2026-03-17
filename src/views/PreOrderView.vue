@@ -9,6 +9,8 @@ const pickupLocations = [
   { name: 'Sommerberg', address: 'Takern I 128, 8321 St. Margarethen' }
 ]
 
+const successRedirectUrl = `${location.origin}/vorbestellen/danke`
+
 const form = ref({
   name: '',
   email: '',
@@ -19,8 +21,8 @@ const form = ref({
   dsgvoAccepted: false
 })
 
-const submitted = ref(false)
 const submitting = ref(false)
+const errorMessage = ref('')
 const touched = ref(false)
 const dsgvoOpen = ref(false)
 const agbOpen = ref(false)
@@ -97,35 +99,15 @@ function incrementWeeks() {
   if (form.value.weeks < 8) form.value.weeks++
 }
 
-function handleSubmit() {
+function handleSubmit(event: Event) {
   touched.value = true
-  if (!isFormValid.value) return
-  submitting.value = true
 
-  // Formspree-Anbindung folgt – Daten werden hier geloggt
-  console.log('Vorbestellung:', {
-    ...form.value,
-    totalPrice: totalPrice.value
-  })
-
-  setTimeout(() => {
-    submitting.value = false
-    submitted.value = true
-  }, 500)
-}
-
-function resetForm() {
-  form.value = {
-    name: '',
-    email: '',
-    phone: '',
-    weeks: 1,
-    pickupLocation: '',
-    message: '',
-    dsgvoAccepted: false
+  if (!isFormValid.value) {
+    event.preventDefault()
+    return
   }
-  submitted.value = false
-  touched.value = false
+
+  submitting.value = true
 }
 </script>
 
@@ -161,25 +143,23 @@ function resetForm() {
       </div>
     </div>
 
-    <!-- Erfolgs-Nachricht -->
-    <div v-if="submitted" class="rounded-lg border border-green-200 bg-green-50 p-8 text-center dark:border-green-700 dark:bg-green-900/30">
-      <div class="mb-4 text-4xl">🎉</div>
-      <h2 class="mb-2 text-xl font-bold text-green-800 dark:text-green-200">
-        Vielen Dank für deine Vorbestellung!
-      </h2>
-      <p class="mb-6 text-green-700 dark:text-green-300">
-        Wir melden uns bei dir mit einer Bestätigung. Die Bezahlung erfolgt bei Abholung vor Ort.
-      </p>
-      <button
-        @click="resetForm"
-        class="rounded-lg bg-primary px-6 py-2 text-sm font-medium text-white transition hover:bg-primary/90"
-      >
-        Neue Bestellung aufgeben
-      </button>
-    </div>
-
     <!-- Bestell-Formular -->
-    <form v-else @submit.prevent="handleSubmit" class="space-y-6">
+     <form
+  action="https://form.taxi/s/c3ir6vze"
+  method="POST"
+  @submit="handleSubmit"
+  class="space-y-6"
+>
+      <!-- Form.taxi Meta -->
+<input type="hidden" name="_subject" value="Neue Gemüsekisten-Vorbestellung" />
+<input type="hidden" name="_template" value="table" />
+<input type="hidden" name="_captcha" value="true" />
+<input type="hidden" name="_next" :value="successRedirectUrl" />
+   <!-- Versteckte Werte -->
+      <input type="hidden" name="Wochen" :value="form.weeks" />
+      <input type="hidden" name="Abholort" :value="form.pickupLocation" />
+      <input type="hidden" name="Gesamtpreis" :value="`€${totalPrice},–`" />
+
       <!-- Persönliche Daten -->
       <fieldset class="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
         <legend class="px-2 text-lg font-semibold text-gray-900 dark:text-white">
@@ -189,6 +169,7 @@ function resetForm() {
         <div class="mt-4 grid gap-4 sm:grid-cols-2">
           <FormInput
             v-model="form.name"
+            name="Name"
             label="Name"
             placeholder="Dein vollständiger Name"
             :required="true"
@@ -196,6 +177,8 @@ function resetForm() {
           />
           <FormInput
             v-model="form.email"
+            name="E-Mail"
+
             label="E-Mail"
             type="email"
             placeholder="deine.email@beispiel.at"
@@ -205,7 +188,8 @@ function resetForm() {
         </div>
 
         <FormInput
-          v-model="form.phone"
+          v-model="form.phone"  
+          name="Telefon"
           label="Telefon (optional)"
           type="tel"
           placeholder="+43 ..."
@@ -306,6 +290,7 @@ function resetForm() {
         <div class="mt-4">
           <FormInput
             v-model="form.message"
+            name="Anmerkungen"
             label=""
             :multiline="true"
             :rows="3"
@@ -422,6 +407,11 @@ function resetForm() {
         <p v-if="errors.dsgvoAccepted" class="text-sm text-red-600 dark:text-red-500">
           {{ errors.dsgvoAccepted }}
         </p>
+      </div>
+
+      <!-- Fehler-Nachricht -->
+      <div v-if="errorMessage" class="rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700 dark:border-red-700 dark:bg-red-900/30 dark:text-red-300">
+        {{ errorMessage }}
       </div>
 
       <!-- Submit -->
