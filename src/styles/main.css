@@ -2,12 +2,12 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
-  --color-primary: #eac828; 
-  --color-secondary: #6f9b3b;
-  --color-secondary-dark: #7b8a6b;
+  --color-primary: #6f9b3b; 
+  --color-secondary: #28430c;
   --color-tertiary: #7b8a6b;
-  --color-accent: #6b0052;
-  --color-accent2: #290C42;
+  --color-accent: #eac828;
+  --color-accent2: #6b0052;
+  --color-accent-dark:#290C42;
   --font-sans: Inter, sans-serif;
 }
 

@@ -20,7 +20,7 @@ const imagePositionClass = computed(() => {
 
 <template>
   <div 
-    class="flex flex-col gap-8 rounded-2xl bg-white p-6 md:p-8 shadow-md transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800"
+    class="flex flex-col gap-8 rounded-2xl bg-white p-6 md:p-8 shadow-md  transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800"
     :class="imagePositionClass"
   >
     <!-- Image Section -->

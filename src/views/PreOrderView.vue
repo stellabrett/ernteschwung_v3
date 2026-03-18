@@ -353,26 +353,31 @@ function handleSubmit(event: Event) {
         >
           <p class="mb-3 font-semibold text-gray-900 dark:text-white">Datenschutzerklärung</p>
           <p class="mb-2">
-            Wenn Sie uns über das Formular auf dieser Website kontaktieren oder eine Vorbestellung übermitteln, werden die von Ihnen eingegebenen personenbezogenen Daten (z.&nbsp;B. Name, E-Mail-Adresse, Telefonnummer sowie Ihre Angaben zur Bestellung) zur Bearbeitung Ihrer Anfrage und für mögliche Anschlussfragen verarbeitet.
+            Wenn Du uns über das Formular auf dieser Website kontaktierst oder eine Vorbestellung übermittelst, werden die von Dir eingegebenen personenbezogenen Daten (z.&nbsp;B. Name, E-Mail-Adresse, Telefonnummer sowie Ihre Angaben zur Bestellung) zur Bearbeitung Deiner Anfrage und für mögliche Anschlussfragen verarbeitet.
           </p>
           <p class="mb-2">
             Die Verarbeitung der Daten erfolgt auf Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Verarbeitung zur Durchführung vorvertraglicher Maßnahmen).
           </p>
           <p class="mb-2">
-            Für die technische Abwicklung des Formularversands nutzen wir den Dienst Form.taxi der:<br />
-            Form.taxi GmbH, Königsbrücker Straße 76, 01099 Dresden, Deutschland.
+            Für die technische Abwicklung des Formularversands nutzen wir den Dienst Form.taxi der:
           </p>
           <p class="mb-2">
-            Die von Ihnen eingegebenen Daten werden zur Übermittlung der Anfrage über die Server von Form.taxi verarbeitet. Mit dem Anbieter besteht ein Vertrag zur Auftragsverarbeitung gemäß Art.&nbsp;28 DSGVO.
+            Form.taxi GmbH<br />
+            Königsbrücker Straße 76<br />
+            01099 Dresden<br />
+            Deutschland
+          </p>
+          <p class="mb-2">
+            Die von Dir eingegebenen Daten werden zur Übermittlung der Anfrage über die Server von Form.taxi verarbeitet. Mit dem Anbieter besteht ein Vertrag zur Auftragsverarbeitung gemäß Art.&nbsp;28 DSGVO.
           </p>
           <p class="mb-2">
             Die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage bzw. Vorbestellung verwendet und nicht ohne Ihre Einwilligung an Dritte weitergegeben.
           </p>
           <p class="mb-2">
-            Ihre Daten werden nur so lange gespeichert, wie dies zur Bearbeitung Ihrer Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
+            Deine Daten werden nur so lange gespeichert, wie dies zur Bearbeitung Deiner Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
           </p>
           <p>
-            Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten sowie auf Berichtigung, Löschung oder Einschränkung der Verarbeitung gemäß den geltenden Datenschutzbestimmungen.
+            Du hast jederzeit das Recht auf Auskunft über Deine gespeicherten personenbezogenen Daten sowie auf Berichtigung, Löschung oder Einschränkung der Verarbeitung gemäß den geltenden Datenschutzbestimmungen.
           </p>
         </div>
 
@@ -405,7 +410,7 @@ function handleSubmit(event: Event) {
           <p class="mb-3">Der Inhalt der Gemüsekisten richtet sich nach saisonaler Verfügbarkeit. Änderungen im Sortiment sind möglich.</p>
 
           <p class="mb-1 font-semibold">8. Kontakt</p>
-          <p>Bei Fragen zu Ihrer Bestellung kontaktieren Sie uns bitte per E-Mail oder telefonisch.</p>
+          <p>Bei Fragen zu Ihrer Bestellung kontaktiere uns bitte per E-Mail oder telefonisch.</p>
         </div>
 
         <p v-if="errors.dsgvoAccepted" class="text-sm text-red-600 dark:text-red-500">

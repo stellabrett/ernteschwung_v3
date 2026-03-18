@@ -58,7 +58,7 @@ const upcomingItems = [
 </script>
 
 <template>
-  <div class="space-y-16">
+  <div class="space-y-16 ">
     <section id="home" class="scroll-mt-24">
       <PageHeader/>
     
