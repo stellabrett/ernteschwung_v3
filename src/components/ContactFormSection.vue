@@ -30,7 +30,7 @@ const successRedirectUrl = `${location.origin}/kontakt/danke`
         name="E-Mail"
         label="E-Mail"
         type="email"
-        placeholder="ihre.email@beispiel.de"
+        placeholder="ichwill@gemuese.at"
         :required="true"
       />
 
@@ -46,7 +46,7 @@ const successRedirectUrl = `${location.origin}/kontakt/danke`
         label="Nachricht"
         :multiline="true"
         :rows="6"
-        placeholder="Ihre Nachricht an uns..."
+        placeholder="Deine Nachricht an uns..."
         :required="true"
       />
 

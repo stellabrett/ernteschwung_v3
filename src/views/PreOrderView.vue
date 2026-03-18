@@ -4,9 +4,9 @@ import FormInput from '@/components/FormInput.vue'
 import Icon from '@/components/Icon.vue'
 
 const pickupLocations = [
-  { name: 'Ernteschwung Hof', address: 'Entschendorf 35, 8321 St. Margarethen' },
+  { name: 'Ernteschwung Hof', address: 'Entschendorf 35, 8321 St. Margarethen', hours: 'Freitags von 12–20 Uhr' },
 
-  { name: 'Sommerberg', address: 'Takern I 128, 8321 St. Margarethen' }
+  { name: 'Sommerberg', address: 'Takern I 128, 8321 St. Margarethen', hours: 'Freitags, 14–20 Uhr' }
 ]
 
 const successRedirectUrl = `${location.origin}/vorbestellen/danke`
@@ -37,9 +37,11 @@ const errors = computed(() => ({
     : touched.value && !emailRegex.test(form.value.email.trim())
       ? 'Bitte eine gültige E-Mail-Adresse eingeben.'
       : '',
-  phone: touched.value && form.value.phone.trim() !== '' && !phoneRegex.test(form.value.phone.trim())
-    ? 'Bitte eine gültige Telefonnummer eingeben.'
-    : '',
+  phone: touched.value && form.value.phone.trim() === ''
+    ? 'Telefonnummer ist erforderlich.'
+    : touched.value && !phoneRegex.test(form.value.phone.trim())
+      ? 'Bitte eine gültige Telefonnummer eingeben.'
+      : '',
   pickupLocation: touched.value && form.value.pickupLocation === '' ? 'Bitte einen Abholort wählen.' : '',
   dsgvoAccepted: touched.value && !form.value.dsgvoAccepted ? 'Bitte stimme der Datenschutzerklärung zu.' : ''
 }))
@@ -47,35 +49,41 @@ const errors = computed(() => ({
 const pricePerWeek = 26
 const totalPrice = computed(() => form.value.weeks * pricePerWeek)
 
-const nextWednesday = computed(() => {
-  const now = new Date()
-  const day = now.getDay() // 0=So, 1=Mo, ..., 3=Mi
-  let daysUntilWed = (3 - day + 7) % 7
-  // Wenn heute Mittwoch ist und nach 20 Uhr, nächste Woche
-  if (daysUntilWed === 0 && now.getHours() >= 20) {
-    daysUntilWed = 7
-  }
-  // Wenn heute nach Mittwoch, nächste Woche
-  if (daysUntilWed === 0) daysUntilWed = 0
-  const wed = new Date(now)
-  wed.setDate(now.getDate() + daysUntilWed)
-  return wed.toLocaleDateString('de-AT', { weekday: 'long', day: 'numeric', month: 'long' })
-})
+// Saison: 17. April bis 5. Dezember
+const currentYear = new Date().getFullYear()
+const seasonFirstPickup = new Date(currentYear, 3, 17) // 17. April
+const seasonLastPickup = new Date(currentYear, 11, 5)   // 5. Dezember
 
-const nextFriday = computed(() => {
+function getNextPickupFriday() {
   const now = new Date()
   const day = now.getDay()
   let daysUntilFri = (5 - day + 7) % 7
-  // Wenn Bestellfrist (Mi 20 Uhr) schon vorbei, nächste Woche Freitag
   const daysUntilWed = (3 - day + 7) % 7
   if (daysUntilWed === 0 && now.getHours() >= 20) {
     daysUntilFri += 7
   } else if (day > 3) {
-    // Nach Mittwoch → nächste Woche Freitag
     daysUntilFri = daysUntilFri === 0 ? 7 : daysUntilFri
   }
   const fri = new Date(now)
   fri.setDate(now.getDate() + daysUntilFri)
+  return fri
+}
+
+const seasonOver = computed(() => getNextPickupFriday() > seasonLastPickup)
+
+const nextWednesday = computed(() => {
+  let fri = getNextPickupFriday()
+  if (fri < seasonFirstPickup) fri = new Date(seasonFirstPickup)
+  if (fri > seasonLastPickup) return ''
+  const wed = new Date(fri)
+  wed.setDate(fri.getDate() - 2)
+  return wed.toLocaleDateString('de-AT', { weekday: 'long', day: 'numeric', month: 'long' })
+})
+
+const nextFriday = computed(() => {
+  let fri = getNextPickupFriday()
+  if (fri < seasonFirstPickup) fri = new Date(seasonFirstPickup)
+  if (fri > seasonLastPickup) return ''
   return fri.toLocaleDateString('de-AT', { weekday: 'long', day: 'numeric', month: 'long' })
 })
 
@@ -83,7 +91,7 @@ const isFormValid = computed(() => {
   return (
     form.value.name.trim() !== '' &&
     emailRegex.test(form.value.email.trim()) &&
-    (form.value.phone.trim() === '' || phoneRegex.test(form.value.phone.trim())) &&
+    phoneRegex.test(form.value.phone.trim()) &&
     form.value.pickupLocation !== '' &&
     form.value.weeks >= 1 &&
     form.value.weeks <= 8 &&
@@ -129,8 +137,16 @@ function handleSubmit(event: Event) {
       Erntefrisches Bio-Gemüse direkt vom Feld – jede Woche 5–8 verschiedene Sorten für 2 Personen.
     </p>
 
+    <!-- Saison beendet -->
+    <div v-if="seasonOver" class="mb-8 rounded-lg border border-gray-200 bg-gray-50 p-6 text-center dark:border-gray-700 dark:bg-gray-800">
+      <p class="text-lg font-semibold text-gray-900 dark:text-white">Die Gemüsekisten-Saison ist beendet.</p>
+      <p class="mt-2 text-gray-600 dark:text-gray-300">
+        Ab April sind wieder Vorbestellungen möglich.
+      </p>
+    </div>
+
     <!-- Info-Banner -->
-    <div class="mb-8 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-700 dark:bg-amber-900/30">
+    <div v-if="!seasonOver" class="mb-8 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-700 dark:bg-amber-900/30">
       <div class="flex items-start gap-3">
         <Icon name="light" class="mt-0.5 h-5 w-5 shrink-0 text-amber-600 dark:text-amber-400" />
         <div class="text-sm text-amber-800 dark:text-amber-200">
@@ -145,6 +161,7 @@ function handleSubmit(event: Event) {
 
     <!-- Bestell-Formular -->
      <form
+  v-if="!seasonOver"
   action="https://form.taxi/s/c3ir6vze"
   method="POST"
   @submit="handleSubmit"
@@ -190,9 +207,10 @@ function handleSubmit(event: Event) {
         <FormInput
           v-model="form.phone"  
           name="Telefon"
-          label="Telefon (optional)"
+          label="Telefon"
           type="tel"
           placeholder="+43 ..."
+          :required="true"
           :error="errors.phone"
         />
       </fieldset>
@@ -275,6 +293,7 @@ function handleSubmit(event: Event) {
             <div>
               <span class="font-medium text-gray-900 dark:text-white">{{ location.name }}</span>
               <span class="block text-xs text-gray-500 dark:text-gray-400">{{ location.address }}</span>
+              <span class="block text-xs text-gray-500 dark:text-gray-400">{{ location.hours }}</span>
             </div>
           </label>
         </div>
@@ -426,7 +445,7 @@ function handleSubmit(event: Event) {
       <!-- Submit -->
       <button
         type="submit"
-        :disabled="!isFormValid || submitting"
+        :disabled="submitting"
         class="w-full rounded-lg bg-primary px-6 py-3 text-center text-sm font-medium text-white shadow-lg transition hover:bg-primary/90 hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-primary/50 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-accent dark:hover:bg-accent/90 dark:focus:ring-accent/50"
       >
         {{ submitting ? 'Wird gesendet...' : 'Vorbestellen' }}

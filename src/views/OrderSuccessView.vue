@@ -20,7 +20,7 @@ import ButtonSecondary from '@/components/_ui_components/ButtonSecondary.vue'
         </router-link>
 
         <router-link to="/" class="inline-block">
-          <ButtonSecondary title="Zurück zur Startseite"/>
+          <ButtonSecondary title="Zurück zur Startseite" icon-prefix="arrow_left" />
         
     
         </router-link>

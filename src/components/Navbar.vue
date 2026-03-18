@@ -42,7 +42,7 @@ const closeMenu = () => {
        <!--    <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-primary to-accent">
             <span class="text-white font-bold text-lg">E</span>
           </div> -->
-          <div class="flex h-14 ">
+          <div class="flex h-14 dark:bg-gray-300 rounded-xl">
             <img src="@/assets/images/Logo_Schriftzug_freigestellt_klein.png" alt="Logo Ernteschwung"  />
           </div>
 <!--           <span class="hidden sm:inline text-xl font-bold text-primary dark:text-white">Ernteschwung</span>

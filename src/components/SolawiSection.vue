@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import Card from '@/components/Card.vue'
 import ButtonPrimary from './_ui_components/ButtonPrimary.vue';
+import { useRouter } from 'vue-router'
 
 interface Props {
   imageSrc: string
 }
 
 defineProps<Props>()
+
+const router = useRouter()
+function goToContact() {
+  router.push('/#kontakt')
+}
 </script>
 
 <template>
@@ -33,7 +39,7 @@ defineProps<Props>()
     </template>
 
     <template #button>
-        <ButtonPrimary title="JETZT ERNTETEILERIN WERDEN" />
+        <ButtonPrimary title="JETZT ERNTETEILERIN WERDEN" @click="goToContact" />
     </template>
   </Card>
 </template>
