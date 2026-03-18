@@ -26,7 +26,6 @@ const getImageWithFallback = (primaryFile: string, fallbackFile: string) => {
   return getImage(primaryFile) || getImage(fallbackFile) || fallbackImage
 }
 
-const homeImage = getImageWithFallback('Home2.WebP', 'home.svg')
 const solawiImage = getImageWithFallback('Solawi.WebP', 'solawi.svg')
 const jungpflanzenImage = getImageWithFallback('Jungpflanzen.WebP', 'jungpflanzen.svg')
 const exkursionenImage = getImageWithFallback('Exkursionen1.WebP', 'exkursionen.svg')

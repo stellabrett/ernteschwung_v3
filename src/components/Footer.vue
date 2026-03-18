@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import logoRund from '@/assets/images/Logo_rund_30_40_125dpi.png'
+import logoRund from '@/assets/images/Logo_rund_klein.png'
 import facebookLogo from '@/assets/images/Facebook_Logo.png'
 import instagramLogo from '@/assets/images/Instagram_Glyph_Gradient.png'
 </script>
@@ -12,30 +12,30 @@ import instagramLogo from '@/assets/images/Instagram_Glyph_Gradient.png'
         <!-- Brand Section -->
         <div>
           <div class="flex items-center space-x-2 mb-4">
-            <img :src="logoRund" alt="Ernteschwung Logo" class="w-14 h-10 rounded-full" />
+            <img :src="logoRund" alt="Ernteschwung Logo" class="w-16 h-12 rounded-xl " />
             <span class="text-lg font-bold text-primary dark:text-white">Ernteschwung</span>
           </div>
-          <p class="text-sm text-gray-400 leading-relaxed">
+          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Faszination – Gemüse – Vielfalt – Natur
           </p>
         </div>
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-sm font-semibold text-white mb-4">Navigation</h3>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">Navigation</h3>
           <ul class="space-y-2">
             <li>
-              <RouterLink to="/" class="text-sm text-gray-400 hover:text-primary transition-colors duration-200">
+              <RouterLink to="/" class="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200">
                 Startseite
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/#kontakt" class="text-sm text-gray-400 hover:text-primary transition-colors duration-200">
+              <RouterLink to="/#kontakt" class="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200">
                 Kontakt
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/impressum" class="text-sm text-gray-400 hover:text-primary transition-colors duration-200">
+              <RouterLink to="/impressum" class="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200">
                 Impressum
               </RouterLink>
             </li>
@@ -44,8 +44,8 @@ import instagramLogo from '@/assets/images/Instagram_Glyph_Gradient.png'
 
         <!-- Contact Info -->
         <div>
-          <h3 class="text-sm font-semibold text-white mb-4">Kontakt</h3>
-          <div class="space-y-2 text-sm text-gray-400">
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">Kontakt</h3>
+          <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
             <p>E-Mail: gemuese@ernteschwung.at</p>
             <p>Telefon:  +43 664 1013547</p>
             <p>Adresse: Entschendorf 35, 8321 St. Margarethen, Austria</p>

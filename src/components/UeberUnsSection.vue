@@ -38,7 +38,7 @@ defineProps<Props>()
       <img
         :src="imageSrc2"
         alt="Anke Breineder"
-        class="w-full md:w-64 shrink-0 rounded-xl object-cover self-stretch ransition-transform duration-500 hover:scale-105"
+        class="w-full md:w-64 shrink-0 rounded-xl object-cover self-stretch transition-transform duration-500 hover:scale-105"
       />
       <div class="flex flex-col justify-center">
         <h3 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Anke Breineder</h3>
