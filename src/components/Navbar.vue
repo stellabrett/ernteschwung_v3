@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import DarkMode from '@/components/DarkMode.vue'
+// import DarkMode from '@/components/DarkMode.vue'
 import Icon from '@/components/Icon.vue'
 
 const route = useRoute()
@@ -42,8 +42,8 @@ const closeMenu = () => {
        <!--    <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-primary to-accent">
             <span class="text-white font-bold text-lg">E</span>
           </div> -->
-          <div class="flex h-14 dark:bg-gray-300 rounded-xl">
-            <img src="@/assets/images/Logo_Schriftzug_freigestellt_klein.png" alt="Logo Ernteschwung"  />
+          <div class="flex h-14">
+            <img src="@/assets/images/Logo_Schriftzug_freigestellt_klein.png" alt="Logo Ernteschwung" class="h-full w-auto max-w-[180px] object-contain" />
           </div>
 <!--           <span class="hidden sm:inline text-xl font-bold text-primary dark:text-white">Ernteschwung</span>
  -->          
@@ -63,7 +63,7 @@ const closeMenu = () => {
    
         <!-- Right Side: Dark Mode Toggle + Mobile Menu Button -->
         <div class="flex items-center space-x-2">
-          <DarkMode />
+          <!-- <DarkMode /> -->
 
           <!-- Mobile Menu Button -->
           <button

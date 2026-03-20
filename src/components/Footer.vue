@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import logoRund from '@/assets/images/Logo_rund_klein.png'
+import bioLogo from '@/assets/images/AT-BIO-402_AT_quer(1).jpg'
 import facebookLogo from '@/assets/images/Facebook_Logo.png'
 import instagramLogo from '@/assets/images/Instagram_Glyph_Gradient.png'
 </script>
@@ -18,6 +19,7 @@ import instagramLogo from '@/assets/images/Instagram_Glyph_Gradient.png'
           <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             Faszination – Gemüse – Vielfalt – Natur
           </p>
+          <img :src="bioLogo" alt="AT-BIO-402 Zertifizierung" class="mt-4 h-10 rounded" />
         </div>
 
         <!-- Quick Links -->
