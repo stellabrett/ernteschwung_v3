@@ -27,14 +27,7 @@ function goToContact() {
 
     <template #text>
       <p class="leading-relaxed">
-        Die Solidarische Landwirtschaft, auch CSA (Community Supported Agriculture) ist ein bewährtes Konzept, das eine
-        unabhängige, krisenfeste und zukunftsfähige Landwirtschaft ermöglicht. Der Großteil unserer Gemüseproduktion wird
-        schon im Voraus finanziert. Als ErnteteilerIn bekommst du dafür einen Anteil der Gemüseernte zugesichert. Diese
-        Planungssicherheit erlaubt uns eine zielgerichtete Produktion ohne Abfälle. Bei unserer jährlichen
-        Winterversammlung legen wir unser Budget offen, berichten über die Geschehnisse der vergangenen Saison und
-        präsentieren die Neuerungen für das kommende Jahr. Bei freiwilligen Ernteaktionen, Gartenführungen, über unseren
-        Newsletter oder beim Erntedankfest im Herbst kannst du uns, den Marktgarten und den Hof näher kennenzulernen.
-        Solidarische Landwirtschaft ist ehrlich, direkt und transparent.
+        Die Solidarische Landwirtschaft, auch CSA (Community Supported Agriculture) ist ein bewährtes Konzept, das eine unabhängige, krisenfeste und zukunftsfähige Landwirtschaft ermöglicht. Der Großteil unserer Gemüseproduktion wird schon im Voraus finanziert. Als ErnteteilerIn bekommst Du dafür einen Anteil der Gemüseernte zugesichert. Diese Planungssicherheit erlaubt uns eine zielgerichtete Produktion ohne Überschüsse. Bei unserer jährlichen Winterversammlung legen wir unser Budget offen, berichten über die Geschehnisse der vergangenen Saison und präsentieren die Neuerungen für das kommende Jahr. Bei freiwilligen Ernteaktionen, Gartenführungen, über unseren Newsletter oder beim Erntedankfest im Herbst kannst Du uns, den Marktgarten und den Hof näher kennenzulernen. Solidarische Landwirtschaft ist ehrlich, direkt und transparent.
       </p>
     </template>
 
