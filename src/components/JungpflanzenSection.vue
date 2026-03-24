@@ -13,6 +13,7 @@ defineProps<Props>()
     :image-src="imageSrc"
     image-alt="Jungpflanzen"
     image-position="right"
+    bg-class="bg-lime-50 dark:bg-gray-800"
   >
     <template #title>
       Jungpflanzen
@@ -20,7 +21,7 @@ defineProps<Props>()
 
     <template #text>
       <p class="leading-relaxed">
- Von Anfang Mai bis Anfang Juni kannst Du bei uns ab Hof Jungpflanzen aus torffreier Anzucht für deinen eigenen Hausgarten beziehen. Neben einem breiten Sortiment an Gemüsejungpflanzen erhältst Du auch verschiedene Blumenpflanzen, die Deinen Garten noch weiter verschönern. Komm zu unseren Jungpflanzenmärkten und lerne uns und den Hof kennen. Gerne bieten wir Dir auf Anfrage auch abseits der Märkte ein breites Sortiment an Pflanzen an.
+  Von Anfang Mai bis Anfang Juni kannst du bei uns ab Hof Jungpflanzen aus torffreier Anzucht für deinen eigenen Hausgarten beziehen. Neben einem breiten Sortiment an Gemüsejungpflanzen erhältst du auch verschiedene Blumenpflanzen, die deinen Garten noch weiter verschönern. Auf Anfrage bieten wir dir gerne auch vor Anfang Mai und nach Anfang Juni verschiedene Jungpflanzen an. Komm zu einem unserer Jungpflanzenmärkte am Hof und lerne uns und den Hof kennen. 
       </p>
     </template>
 

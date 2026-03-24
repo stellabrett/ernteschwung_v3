@@ -55,7 +55,7 @@ const closeMenu = () => {
             v-for="link in navLinks"
             :key="link.hash"
             :to="linkTo(link.hash)"
-            class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-primary/10 hover:text-primary dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-accent transition-all duration-200"
+            class="px-3 py-2 rounded-md text-m font-medium text-primary hover:bg-primary/10 hover:text-secondary dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-accent transition-all duration-200"
           >
             {{ link.name }}
           </router-link>
@@ -68,7 +68,7 @@ const closeMenu = () => {
           <!-- Mobile Menu Button -->
           <button
             @click="toggleMenu"
-            class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors"
+            class="md:hidden p-2 rounded-lg text-primary hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors"
             :aria-label="isOpen ? 'Menü schließen' : 'Menü öffnen'"
             :aria-expanded="isOpen"
           >

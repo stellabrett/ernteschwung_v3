@@ -4,10 +4,10 @@
 @theme {
   --color-primary: #6f9b3b; 
   --color-secondary: #28430c;
-  --color-tertiary: #7b8a6b;
-  --color-accent: #eac828;
-  --color-accent2: #6b0052;
-  --color-accent-dark:#290C42;
+  --color-mint: #7b8a6b;
+  --color-yellow: #eac828;
+  --color-purple: #6b0052;
+  --color-purple-dark:#290C42;
   --font-sans: Inter, sans-serif;
 }
 

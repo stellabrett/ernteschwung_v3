@@ -5,7 +5,7 @@ import ButtonSecondary from '@/components/_ui_components/ButtonSecondary.vue'
 
 <template>
   <div class="mx-auto max-w-2xl px-4 py-20 text-center">
-    <div class="rounded-2xl bg-white p-10 shadow-md dark:bg-gray-800">
+    <div class="rounded-xl bg-white p-10 shadow-md dark:bg-gray-800">
       <div class="mb-6 text-5xl" aria-hidden="true">🎉</div>
       <h1 class="mb-3 text-3xl font-bold text-secondary dark:text-accent">
         Vielen Dank für deine Vorbestellung!

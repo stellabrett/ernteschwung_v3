@@ -13,6 +13,7 @@ defineProps<Props>()
     :image-src="imageSrc"
     image-alt="Wiesenheu"
     image-position="left"
+    bg-class="bg-yellow-50 dark:bg-gray-800"
   >
     <template #title>
       Wiesenheu

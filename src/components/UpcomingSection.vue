@@ -12,7 +12,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="rounded-2xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
+  <section class="rounded-xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
     <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Aktuelles</h2>
 
     <div class="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">

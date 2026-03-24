@@ -5,12 +5,14 @@ interface Props {
   imageSrc?: string
   imageAlt?: string
   imagePosition?: 'left' | 'right'
+  bgClass?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   imageSrc: '',
   imageAlt: '',
-  imagePosition: 'left'
+  imagePosition: 'left',
+  bgClass: 'bg-white dark:bg-gray-800'
 })
 
 const imagePositionClass = computed(() => {
@@ -20,8 +22,8 @@ const imagePositionClass = computed(() => {
 
 <template>
   <div 
-    class="flex flex-col gap-8 rounded-2xl bg-white p-6 md:p-8 shadow-md  transition-shadow duration-300 hover:shadow-lg dark:bg-gray-800"
-    :class="imagePositionClass"
+    class="flex flex-col gap-8 rounded-xl p-6 md:p-8 shadow-md transition-shadow duration-300 hover:shadow-lg"
+    :class="[imagePositionClass, bgClass]"
   >
     <!-- Image Section -->
     <div class="w-full md:w-1/2 overflow-hidden rounded-xl">

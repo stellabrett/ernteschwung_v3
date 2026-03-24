@@ -12,7 +12,7 @@ defineProps<Props>()
     <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center">Über uns</h2>
 
     <!-- Arjuna -->
-    <div class="flex flex-col md:flex-row gap-8 rounded-2xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
+    <div class="flex flex-col md:flex-row gap-8 rounded-xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
       <img
         :src="imageSrc1"
         alt="Arjuna Gratt"
@@ -34,7 +34,7 @@ defineProps<Props>()
     </div>
 
     <!-- Anke -->
-    <div class="flex flex-col md:flex-row-reverse gap-8 rounded-2xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
+    <div class="flex flex-col md:flex-row-reverse gap-8 rounded-xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
       <img
         :src="imageSrc2"
         alt="Anke Breineder"

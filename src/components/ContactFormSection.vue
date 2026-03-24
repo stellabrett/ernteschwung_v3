@@ -6,7 +6,7 @@ const successRedirectUrl = `${location.origin}/kontakt/danke`
 </script>
 
 <template>
-  <section class="rounded-2xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
+  <section class="rounded-xl bg-white p-6 md:p-8 shadow-md dark:bg-gray-800">
     <h2 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Kontakt</h2>
     <p class="mb-8 text-gray-600 dark:text-gray-300">
       Schreib uns eine Nachricht – wir melden uns so schnell wie möglich.
