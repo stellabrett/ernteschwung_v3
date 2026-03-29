@@ -34,7 +34,7 @@ const willkommenImage = getImageWithFallback('Willkommen.WebP', 'home.svg')
 const ueberUnsImage1 = getImageWithFallback('UeberUns1.WebP', 'ueber-uns.svg')
 const ueberUnsImage2 = getImageWithFallback('UeberUns2.WebP', 'ueber-uns.svg')
 const erntedankfestImage = getImageWithFallback('Erntedankfest.WebP', 'ueber-uns.svg')
-const halloFruehlingImage = getImage('HalloFruehling.jpg') || fallbackImage
+const infotagMohogaImage = getImage('InfotagMohoga.jpg') || fallbackImage
 const jungpflanzenmaerkteImage = getImage('JungpflanzenmarktFlyer.jpg') || fallbackImage
 
 
@@ -42,8 +42,8 @@ const upcomingItems = [
   {
     title: 'Hofführung im März',
     text: 'Einblick in Anbau, Bodenpflege und unsere aktuellen Kulturen auf dem Feld.',
-    imageSrc: halloFruehlingImage,
-    imageAlt: 'Hofführung'
+    imageSrc: infotagMohogaImage,
+    imageAlt: 'Infotag Mohoga'
   },
   {
     title: 'Jungpflanzen-Verkauf',

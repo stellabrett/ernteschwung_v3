@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Card from '@/components/Card.vue'
+import Card from "@/components/Card.vue";
 
 interface Props {
-  imageSrc: string
+  imageSrc: string;
 }
 
-defineProps<Props>()
+defineProps<Props>();
 </script>
 
 <template>
@@ -15,17 +15,18 @@ defineProps<Props>()
     image-position="left"
     bg-class="bg-orange-50 dark:bg-gray-800"
   >
-    <template #title>
-      Erntedankfest
-    </template>
+    <template #title> Erntedankfest </template>
 
     <template #text>
       <p class="leading-relaxed">
-  Weil wir mit Leidenschaft bei der Sache sind, ist es uns ein Herzensanliegen die Ernte gebührend zu feiern. Wenn die Hagelsaison im September zu Ende geht, lassen wir das Donnergrollen
-        der Sommermonate hinter uns und verbreiten den Klang von Freude, Leichtigkeit und Dankbarkeit auf unserem Hügel.
-        Alle, die von uns Gemüse beziehen, NachbarInnen, Freunde, Verwandte &amp; Bekannte sind eingeladen, eine schöne
-        Zeit bei uns zu verbringen. Ein Fest, das offen ist für alle und das einfach Spaß macht. Sei gerne unser Gast
-        und schwing mit ein.
+        Wir sind mit Leidenschaft bei der Sache und wollen die Ernte daher
+        gebührend mit Dir feiern. Wenn im September die Hagelsaison zu Ende
+        geht, vergessen wir das Donnergrollen der Sommermonate und verbreiten
+        den Klang von Lebensfreude und Dankbarkeit auf unserem Hügel. Alle, die
+        unser Gemüse beziehen, sowie unsere NachbarInnen, FreundInnen,
+        Verwandte, Bekannte und alle, die uns und den Hof kennenlernen wollen,
+        sind eingeladen, eine schöne Zeit bei uns zu verbringen. Es ist ein Fest
+        für alle, das einfach Spaß macht. Sei unser Gast und schwing mit ein!
       </p>
     </template>
   </Card>

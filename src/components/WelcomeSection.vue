@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Card from '@/components/Card.vue'
+import Card from "@/components/Card.vue";
 
 interface Props {
-  imageSrc: string
+  imageSrc: string;
 }
 
-defineProps<Props>()
+defineProps<Props>();
 </script>
 
 <template>
@@ -15,18 +15,19 @@ defineProps<Props>()
     image-position="left"
     bg-class=" bg-white dark:bg-gray-800"
   >
-    <template #title>
-      Willkommen am Ernteschwung Hof!
-    </template>
+    <template #title> Willkommen am Ernteschwung Hof! </template>
 
     <template #text>
       <p class="leading-relaxed">
-        Hier treffen sich DEINE Liebe zum guten Geschmack und UNSERE Begeisterung für die natürliche Vielfalt.
-        Neben erntefrischem Bio-Gemüse aus unserem Marktgarten gibt es bei uns Jungpflanzen aus torffreier Anzucht
-        und Wiesenheu in Kleinballen. Als Solidarische Landwirtschaft setzen wir neue Akzente in der regionalen
-        Lebensmittelversorgung. Schwungvoll runden wir die Gemüsesaison mit unserem Erntedankfest im September ab!
-        Gerne heißen wir dich als Gruppe bei Exkursionen oder Ausflügen am Hof willkommen. Wir sind ein
-        zertifizierter Bio-Betrieb und werden jährlich von der Kontrollstelle Lacon auf die Einhaltung der
+        Hier treffen sich DEINE Liebe zum guten Geschmack und UNSERE
+        Begeisterung für die natürliche Vielfalt. Neben erntefrischem Bio-Gemüse
+        aus unserem Marktgarten gibt es bei uns Jungpflanzen aus torffreier
+        Anzucht und Wiesenheu in Kleinballen. Als Solidarische Landwirtschaft
+        setzen wir neue Akzente in der regionalen Lebensmittelversorgung.
+        Schwungvoll runden wir die Gemüsesaison mit unserem Erntedankfest im
+        September ab! Gerne heißen wir Dich als Gruppe bei Exkursionen oder
+        Ausflügen am Hof willkommen. Wir sind ein zertifizierter Bio-Betrieb und
+        werden jährlich von der Kontrollstelle Lacon auf die Einhaltung der
         EU-Bio Richtlinien kontrolliert.
       </p>
     </template>

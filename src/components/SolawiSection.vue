@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import Card from '@/components/Card.vue'
-import ButtonPrimary from './_ui_components/ButtonPrimary.vue';
-import { useRouter } from 'vue-router'
+import Card from "@/components/Card.vue";
+import ButtonPrimary from "./_ui_components/ButtonPrimary.vue";
+import { useRouter } from "vue-router";
 
 interface Props {
-  imageSrc: string
+  imageSrc: string;
 }
 
-defineProps<Props>()
+defineProps<Props>();
 
-const router = useRouter()
+const router = useRouter();
 function goToContact() {
-  router.push('/#kontakt')
+  router.push("/#kontakt");
 }
 </script>
 
@@ -22,25 +22,28 @@ function goToContact() {
     image-position="right"
     bg-class=" dark:bg-gray-800"
   >
-    <template #title>
-      SoLaWi
-    </template>
+    <template #title> SoLaWi </template>
 
     <template #text>
       <p class="leading-relaxed">
-        Die Solidarische Landwirtschaft, auch CSA (Community Supported Agriculture) ist ein bewährtes Konzept, das eine
-        unabhängige, krisenfeste und zukunftsfähige Landwirtschaft ermöglicht. Der Großteil unserer Gemüseproduktion wird
-        schon im Voraus finanziert. Als ErnteteilerIn bekommst du dafür einen Anteil der Gemüseernte zugesichert. Diese
-        Planungssicherheit erlaubt uns eine zielgerichtete Produktion ohne Abfälle. Bei unserer jährlichen
-        Winterversammlung legen wir unser Budget offen, berichten über die Geschehnisse der vergangenen Saison und
-        präsentieren die Neuerungen für das kommende Jahr. Bei freiwilligen Ernteaktionen, Gartenführungen, über unseren
-        Newsletter oder beim Erntedankfest im Herbst kannst du uns, den Marktgarten und den Hof näher kennenzulernen.
-        Solidarische Landwirtschaft ist ehrlich, direkt und transparent.
+        Die Solidarische Landwirtschaft, auch CSA (Community Supported
+        Agriculture) ist ein bewährtes Konzept, das eine unabhängige,
+        krisenfeste und zukunftsfähige Landwirtschaft ermöglicht. Der Großteil
+        unserer Gemüseproduktion wird schon im Voraus finanziert. Als
+        ErnteteilerIn bekommst Du dafür einen Anteil der Gemüseernte
+        zugesichert. Diese Planungssicherheit erlaubt uns eine zielgerichtete
+        Produktion ohne Überschüsse. Bei unserer jährlichen Winterversammlung
+        legen wir unser Budget offen, berichten über die Geschehnisse der
+        vergangenen Saison und präsentieren die Neuerungen für das kommende
+        Jahr. Bei freiwilligen Ernteaktionen, Gartenführungen, über unseren
+        Newsletter oder beim Erntedankfest im Herbst kannst Du uns, den
+        Marktgarten und den Hof näher kennenzulernen. Solidarische
+        Landwirtschaft ist ehrlich, direkt und transparent.
       </p>
     </template>
 
     <template #button>
-        <ButtonPrimary title="JETZT ERNTETEILERIN WERDEN" @click="goToContact" />
+      <ButtonPrimary title="JETZT ERNTETEILERIN WERDEN" @click="goToContact" />
     </template>
   </Card>
 </template>
