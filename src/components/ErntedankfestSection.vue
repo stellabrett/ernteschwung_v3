@@ -13,7 +13,7 @@ defineProps<Props>();
     :image-src="imageSrc"
     image-alt="Erntedankfest"
     image-position="left"
-    bg-class="bg-orange-50 dark:bg-gray-800"
+    bg-class="bg-white dark:bg-gray-800"
   >
     <template #title> Erntedankfest </template>
 

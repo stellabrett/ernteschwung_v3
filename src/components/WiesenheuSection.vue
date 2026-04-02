@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Card from '@/components/Card.vue'
+import Card from "@/components/Card.vue";
 
 interface Props {
-  imageSrc: string
+  imageSrc: string;
 }
 
-defineProps<Props>()
+defineProps<Props>();
 </script>
 
 <template>
@@ -13,16 +13,20 @@ defineProps<Props>()
     :image-src="imageSrc"
     image-alt="Wiesenheu"
     image-position="left"
-    bg-class="bg-yellow-50 dark:bg-gray-800"
+    bg-class="bg-white dark:bg-gray-800"
   >
-    <template #title>
-      Wiesenheu
-    </template>
+    <template #title> Wiesenheu </template>
 
     <template #text>
       <p class="leading-relaxed">
-      Wenn im Sommer die Sonne dem Gemüse zu schaffen macht, liegt der köstliche Duft von frischem Wiesenheu über unserem Hof. Die beiden umliegenden Heuwiesen sind ein wichtiger Rückzugsort für Insekten, Hasen und viele andere Lebewesen. Durch die jährliche Mahd und anschließende Heuproduktion gewährleisten wir eine hohe Pflanzenvielfalt auf diesen Flächen. Der späte erste Schnitt eignet sich ideal als Pferdefutter oder zum Mulchen. Die handlich gepressten Kleinballen wiegen ca. 15 kg und können leicht transportiert werden.
-
+        Wenn im Sommer die Sonne dem Gemüse zu schaffen macht, liegt der
+        köstliche Duft von frischem Wiesenheu über unserem Hof. Die beiden
+        umliegenden Heuwiesen sind ein wichtiger Rückzugsort für Insekten, Hasen
+        und viele andere Lebewesen. Durch die jährliche Mahd und anschließende
+        Heuproduktion gewährleisten wir eine hohe Pflanzenvielfalt auf diesen
+        Flächen. Der späte erste Schnitt eignet sich ideal als Pferdefutter oder
+        zum Mulchen. Die handlich gepressten Kleinballen wiegen ca. 15 kg und
+        können leicht transportiert werden.
       </p>
     </template>
   </Card>

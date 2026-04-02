@@ -13,7 +13,7 @@ defineProps<Props>();
     :image-src="imageSrc"
     image-alt="Ausflüge und Exkursionen"
     image-position="right"
-    bg-class="bg-purple-50 dark:bg-gray-800"
+    bg-class="bg-white dark:bg-gray-800"
   >
     <template #title> Ausflüge/ Exkursionen </template>
 

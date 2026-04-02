@@ -10,8 +10,9 @@ const imageModules = import.meta.glob("@/assets/images/*", {
   import: "default",
 }) as Record<string, string>;
 
-const sliderImages = Array.from({ length: 10 }, (_, i) => ({
-  src: imageModules[`/src/assets/images/${i + 2}.WebP`] ?? "",
+const sliderImageNumbers = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const sliderImages = sliderImageNumbers.map((n, i) => ({
+  src: imageModules[`/src/assets/images/${n}.WebP`] ?? "",
   alt: `Gemüsekiste ${i + 1}`,
 }));
 
