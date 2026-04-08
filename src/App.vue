@@ -39,7 +39,7 @@ import Footer from "@/components/Footer.vue";
 <template>
   <div
     id="app"
-    class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors"
+    class="flex flex-col min-h-screen bg-secondary/50 dark:bg-gray-900 transition-colors"
   >
     <Navbar />
 

@@ -20,7 +20,7 @@ function goToContact() {
     :image-src="imageSrc"
     image-alt="Solidarische Landwirtschaft"
     image-position="right"
-    bg-class=" dark:bg-gray-800"
+    bg-class="bg-white dark:bg-gray-800"
   >
     <template #title> SoLaWi </template>
 

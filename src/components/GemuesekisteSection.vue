@@ -26,7 +26,7 @@ function goToPreOrder() {
   <Card
     image-alt="Gemüsekiste"
     image-position="left"
-    bg-class=" dark:bg-gray-800"
+    bg-class="bg-white dark:bg-gray-800"
   >
     <template #image>
       <ImageSlider :images="sliderImages" />

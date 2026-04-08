@@ -74,14 +74,16 @@ const upcomingItems = [
     <section id="willkommen" class="scroll-mt-24">
       <WelcomeSection :image-src="willkommenImage" />
     </section>
+    
+        <section id="gemuesekiste" class="scroll-mt-24">
+      <GemuesekisteSection />
+    </section>
 
     <section id="solawi" class="scroll-mt-24">
       <SolawiSection :image-src="solawiImage" />
     </section>
 
-    <section id="gemuesekiste" class="scroll-mt-24">
-      <GemuesekisteSection />
-    </section>
+
 
     <section id="jungpflanzen" class="scroll-mt-24">
       <JungpflanzenSection :image-src="jungpflanzenImage" />

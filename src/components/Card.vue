@@ -1,37 +1,39 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from "vue";
 
 interface Props {
-  imageSrc?: string
-  imageAlt?: string
-  imagePosition?: 'left' | 'right'
-  bgClass?: string
+  imageSrc?: string;
+  imageAlt?: string;
+  imagePosition?: "left" | "right";
+  bgClass?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  imageSrc: '',
-  imageAlt: '',
-  imagePosition: 'left',
-  bgClass: 'bg-white dark:bg-gray-800'
-})
+  imageSrc: "",
+  imageAlt: "",
+  imagePosition: "left",
+  bgClass: " dark:bg-gray-800",
+});
 
 const imagePositionClass = computed(() => {
-  return props.imagePosition === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'
-})
+  return props.imagePosition === "right"
+    ? "md:flex-row-reverse"
+    : "md:flex-row";
+});
 </script>
 
 <template>
-  <div 
+  <div
     class="flex flex-col gap-8 rounded-xl p-6 md:p-8 shadow-md transition-shadow duration-300 hover:shadow-lg"
     :class="[imagePositionClass, bgClass]"
   >
     <!-- Image Section -->
     <div class="w-full md:w-1/2 overflow-hidden rounded-xl">
       <slot name="image">
-        <img 
+        <img
           v-if="imageSrc"
-          :src="imageSrc" 
-          :alt="imageAlt" 
+          :src="imageSrc"
+          :alt="imageAlt"
           class="h-full w-full rounded-xl object-cover transition-transform duration-500 hover:scale-105"
         />
       </slot>
@@ -45,7 +47,7 @@ const imagePositionClass = computed(() => {
       <div class="text-gray-600 leading-relaxed dark:text-gray-300">
         <slot name="text" />
       </div>
-      
+
       <!-- Optional Button Slot -->
       <div v-if="$slots['button']" class="mt-6">
         <slot name="button" />
