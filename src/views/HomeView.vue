@@ -43,16 +43,16 @@ const erntedankfestImage = getImageWithFallback(
   "Erntedankfest.WebP",
   "ueber-uns.svg",
 );
-const infotagMohogaImage = getImage("InfotagMohoga.jpg") || fallbackImage;
+const saisonstartImage = getImage("SaisonstartFlyer.jpg") || fallbackImage;
 const jungpflanzenmaerkteImage =
   getImage("JungpflanzenmarktFlyer.jpg") || fallbackImage;
 
 const upcomingItems = [
   {
-    title: "Infotag Mohoga",
-    text: "Komm zum Infotag in Graz am 4. April ab 14:00.",
-    imageSrc: infotagMohogaImage,
-    imageAlt: "Infotag Mohoga",
+    title: "Saisonstart",
+    text: "Wir freuen uns auf euch!",
+    imageSrc: saisonstartImage,
+    imageAlt: "Saisonstart Flyer",
   },
   {
     title: "Jungpflanzen-Verkauf",
@@ -74,16 +74,14 @@ const upcomingItems = [
     <section id="willkommen" class="scroll-mt-24">
       <WelcomeSection :image-src="willkommenImage" />
     </section>
-    
-        <section id="gemuesekiste" class="scroll-mt-24">
+
+    <section id="gemuesekiste" class="scroll-mt-24">
       <GemuesekisteSection />
     </section>
 
     <section id="solawi" class="scroll-mt-24">
       <SolawiSection :image-src="solawiImage" />
     </section>
-
-
 
     <section id="jungpflanzen" class="scroll-mt-24">
       <JungpflanzenSection :image-src="jungpflanzenImage" />
