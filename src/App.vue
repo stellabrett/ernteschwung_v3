@@ -43,7 +43,7 @@ import Footer from "@/components/Footer.vue";
   >
     <Navbar />
 
-    <main class="flex-1 w-full">
+    <main id="main-content" class="flex-1 w-full">
       <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <RouterView />
       </div>
