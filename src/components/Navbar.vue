@@ -52,7 +52,7 @@ onUnmounted(() => document.removeEventListener("keydown", handleKeydown));
   </a>
 
   <nav
-    class="sticky top-0 z-50 border-b border-gray-200/50 bg-yellow/85 backdrop-blur-md shadow-sm dark:border-gray-700/80 dark:bg-gray-900/80"
+    class="sticky top-0 z-50 border-b border-gray-200/50 bg-yellow/80 backdrop-blur-md shadow-sm dark:border-gray-700/80 dark:bg-gray-900/80"
     aria-label="Hauptnavigation"
   >
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -64,7 +64,7 @@ onUnmounted(() => document.removeEventListener("keydown", handleKeydown));
         >
           <div class="flex h-14">
             <img
-              src="@/assets/images/Logo_Schriftzug_freigestellt_klein.png"
+              src="@/assets/images/Logo_Schriftzug_neu.png"
               alt="Ernteschwung – zur Startseite"
               class="h-full w-auto max-w-45 object-contain"
             />

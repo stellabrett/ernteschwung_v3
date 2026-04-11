@@ -56,7 +56,9 @@ function goToPreOrder() {
       </div>
       <div class="flex gap-2 flex-nowrap">
         <Icon name="leave" class="h-6 w-6 shrink-0 text-green-800" />
-        <p>Abholbar am Hof ( Entschendorf ), Sommerberg oder nach Absprache</p>
+        <p>
+          Abholbar am Hof (Entschendorf), in Sommerberg, Gleisdorf oder Graz
+        </p>
       </div>
       <div class="flex gap-2 flex-nowrap">
         <Icon name="leave" class="h-6 w-6 shrink-0 text-green-800" />
