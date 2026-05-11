@@ -43,17 +43,10 @@ const erntedankfestImage = getImageWithFallback(
   "Erntedankfest.WebP",
   "ueber-uns.svg",
 );
-const saisonstartImage = getImage("SaisonstartFlyer.jpg") || fallbackImage;
 const jungpflanzenmaerkteImage =
   getImage("JungpflanzenmarktFlyer.jpg") || fallbackImage;
 
 const upcomingItems = [
-  {
-    title: "Saisonstart",
-    text: "Wir freuen uns auf euch!",
-    imageSrc: saisonstartImage,
-    imageAlt: "Saisonstart Flyer",
-  },
   {
     title: "Jungpflanzen-Verkauf",
     text: "Saisonstart mit robusten Jungpflanzen für Garten, Balkon und Hochbeet.",
