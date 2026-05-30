@@ -43,15 +43,14 @@ const erntedankfestImage = getImageWithFallback(
   "Erntedankfest.WebP",
   "ueber-uns.svg",
 );
-const jungpflanzenmaerkteImage =
-  getImage("JungpflanzenmarktFlyer.jpg") || fallbackImage;
+const gartenfestImage = getImage("GartenfestFlyer.jpg") || fallbackImage;
 
 const upcomingItems = [
   {
-    title: "Jungpflanzen-Verkauf",
-    text: "Saisonstart mit robusten Jungpflanzen für Garten, Balkon und Hochbeet.",
-    imageSrc: jungpflanzenmaerkteImage,
-    imageAlt: "Jungpflanzen Verkauf",
+    title: "Gartenfest Gleisdorf",
+    text: "Unser ganzes Jungpflanzen-Sortiment und vieles, vieles mehr gibt's am GARTENFEST in Gleisdorf! #gleisdorfcity",
+    imageSrc: gartenfestImage,
+    imageAlt: "GartenFest Flyer",
   },
 ];
 </script>
