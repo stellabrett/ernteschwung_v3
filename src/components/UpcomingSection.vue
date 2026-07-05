@@ -2,6 +2,8 @@
 interface UpcomingItem {
   imageSrc: string;
   imageAlt: string;
+  linkUrl?: string;
+  linkText?: string;
 }
 
 defineProps<{
@@ -26,6 +28,18 @@ defineProps<{
           :alt="item.imageAlt"
           class="w-full object-contain"
         />
+        <div v-if="item.linkUrl" class="p-4">
+          <p class="text-m text-gray-600 dark:text-gray-300">
+            Mehr Infos unter
+            <a
+              :href="item.linkUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-secondary underline underline-offset-2 hover:text-primary dark:text-green-400 dark:hover:text-green-300"
+              >{{ item.linkText || item.linkUrl }}</a
+            >
+          </p>
+        </div>
       </article>
     </div>
   </section>
