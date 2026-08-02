@@ -43,15 +43,14 @@ const erntedankfestImage = getImageWithFallback(
   "Erntedankfest.WebP",
   "ueber-uns.svg",
 );
-const flyer1Image = getImage("FlyerYoga.jpg") || fallbackImage;
+const flyer1Image = getImage("Flyer1.jpg") || fallbackImage;
 const flyer2Image = getImage("Flyer2.jpg") || fallbackImage;
 
 const upcomingItems = [
+
   {
     imageSrc: flyer1Image,
-    imageAlt: "Jungpflanzen Flyer 2026",
-    linkUrl: "https://www.yogangelika.com/",
-    linkText: "www.yogangelika.com",
+    imageAlt: "Gartenfest Flyer 2026",
   },
   {
     imageSrc: flyer2Image,
