@@ -17,7 +17,7 @@ const pickupLocations = [
   {
     name: "Graz Mohoga",
     address: "Moserhofgasse 51, 8010 Graz",
-    hours: "Freitags, 10:00–20:00 Uhr",
+    hours: "Freitags, 11:00–20:00 Uhr",
   },
   {
     name: "Gleisdorf Biosphäre",

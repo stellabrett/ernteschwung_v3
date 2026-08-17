@@ -45,15 +45,16 @@ const erntedankfestImage = getImageWithFallback(
 );
 const flyer1Image = getImage("Flyer1.jpg") || fallbackImage;
 const flyer2Image = getImage("Flyer2.jpg") || fallbackImage;
+const flyer3Image = getImage("ErntedankFlyer.jpg") || fallbackImage;
 
 const upcomingItems = [
+  {
+    imageSrc: flyer3Image,
+    imageAlt: "Erntedankfest Flyer 2026",
+  },
 
   {
     imageSrc: flyer1Image,
-    imageAlt: "Gartenfest Flyer 2026",
-  },
-  {
-    imageSrc: flyer2Image,
     imageAlt: "Gartenfest Flyer 2026",
   },
 ];
