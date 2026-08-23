@@ -44,8 +44,8 @@ const erntedankfestImage = getImageWithFallback(
   "ueber-uns.svg",
 );
 const flyer1Image = getImage("Flyer1.jpg") || fallbackImage;
-const flyer2Image = getImage("Flyer2.jpg") || fallbackImage;
-const flyer3Image = getImage("ErntedankFlyer.jpg") || fallbackImage;
+
+const flyer3Image = getImage("ErntedankFlyer2.jpg") || fallbackImage;
 
 const upcomingItems = [
   {
